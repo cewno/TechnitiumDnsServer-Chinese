@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="robots" content="noindex, nofollow" />
@@ -60,14 +60,14 @@
                     <div class="panel-body">
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label for="txtUser" class="col-sm-3 control-label">Username</label>
+                                <label for="txtUser" class="col-sm-3 control-label">用户名</label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" id="txtUser" placeholder="username">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="txtPass" class="col-sm-3 control-label">Password</label>
+                                <label for="txtPass" class="col-sm-3 control-label">密码</label>
                                 <div class="col-sm-8">
                                     <input type="password" class="form-control" id="txtPass" placeholder="password">
                                 </div>
@@ -78,7 +78,7 @@
                                     <button id="btnLogin" type="submit" class="btn btn-primary" data-loading-text="Working..." onclick="login(); return false;">Login</button>
                                 </div>
                                 <div class="col-sm-4" style="padding: 6px; text-align: right;">
-                                    <a href="#" data-toggle="modal" data-target="#modalForgotPassword">Forgot Password?</a>
+                                    <a href="#" data-toggle="modal" data-target="#modalForgotPassword">忘记密码？</a>
                                 </div>
                             </div>
                         </form>
@@ -100,18 +100,18 @@
                     <div class="panel-body" style="min-height: 500px;">
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
-                                <li id="mainPanelTabListDashboard" role="presentation" class="active"><a href="#mainPanelTabPaneDashboard" aria-controls="mainPanelTabPaneDashboard" role="tab" data-toggle="tab" onclick="refreshDashboard();">Dashboard</a></li>
-                                <li id="mainPanelTabListZones" role="presentation"><a href="#mainPanelTabPaneZones" aria-controls="mainPanelTabPaneZones" role="tab" data-toggle="tab" onclick="refreshZones(true);">Zones</a></li>
-                                <li id="mainPanelTabListCachedZones" role="presentation"><a href="#mainPanelTabPaneCachedZones" aria-controls="mainPanelTabPaneCachedZones" role="tab" data-toggle="tab">Cache</a></li>
-                                <li id="mainPanelTabListAllowedZones" role="presentation"><a href="#mainPanelTabPaneAllowedZones" aria-controls="mainPanelTabPaneAllowedZones" role="tab" data-toggle="tab">Allowed</a></li>
-                                <li id="mainPanelTabListBlockedZones" role="presentation"><a href="#mainPanelTabPaneBlockedZones" aria-controls="mainPanelTabPaneBlockedZones" role="tab" data-toggle="tab">Blocked</a></li>
+                                <li id="mainPanelTabListDashboard" role="presentation" class="active"><a href="#mainPanelTabPaneDashboard" aria-controls="mainPanelTabPaneDashboard" role="tab" data-toggle="tab" onclick="refreshDashboard();">仪表盘</a></li>
+                                <li id="mainPanelTabListZones" role="presentation"><a href="#mainPanelTabPaneZones" aria-controls="mainPanelTabPaneZones" role="tab" data-toggle="tab" onclick="refreshZones(true);">区域</a></li>
+                                <li id="mainPanelTabListCachedZones" role="presentation"><a href="#mainPanelTabPaneCachedZones" aria-controls="mainPanelTabPaneCachedZones" role="tab" data-toggle="tab">缓存</a></li>
+                                <li id="mainPanelTabListAllowedZones" role="presentation"><a href="#mainPanelTabPaneAllowedZones" aria-controls="mainPanelTabPaneAllowedZones" role="tab" data-toggle="tab">白名单</a></li>
+                                <li id="mainPanelTabListBlockedZones" role="presentation"><a href="#mainPanelTabPaneBlockedZones" aria-controls="mainPanelTabPaneBlockedZones" role="tab" data-toggle="tab">黑名单</a></li>
                                 <li id="mainPanelTabListApps" role="presentation"><a href="#mainPanelTabPaneApps" aria-controls="mainPanelTabPaneApps" role="tab" data-toggle="tab" onclick="refreshApps();">Apps</a></li>
-                                <li id="mainPanelTabListDnsClient" role="presentation"><a href="#mainPanelTabPaneDnsClient" aria-controls="mainPanelTabPaneDnsClient" role="tab" data-toggle="tab">DNS Client</a></li>
-                                <li id="mainPanelTabListSettings" role="presentation"><a href="#mainPanelTabPaneSettings" aria-controls="mainPanelTabPaneSettings" role="tab" data-toggle="tab" onclick="refreshDnsSettings();">Settings</a></li>
+                                <li id="mainPanelTabListDnsClient" role="presentation"><a href="#mainPanelTabPaneDnsClient" aria-controls="mainPanelTabPaneDnsClient" role="tab" data-toggle="tab">DNS查询</a></li>
+                                <li id="mainPanelTabListSettings" role="presentation"><a href="#mainPanelTabPaneSettings" aria-controls="mainPanelTabPaneSettings" role="tab" data-toggle="tab" onclick="refreshDnsSettings();">设置</a></li>
                                 <li id="mainPanelTabListDhcp" role="presentation"><a href="#mainPanelTabPaneDhcp" aria-controls="mainPanelTabPaneDhcp" role="tab" data-toggle="tab" onclick="refreshDhcpTab();">DHCP</a></li>
-                                <li id="mainPanelTabListAdmin" role="presentation"><a href="#mainPanelTabPaneAdmin" aria-controls="mainPanelTabPaneAdmin" role="tab" data-toggle="tab" onclick="refreshAdminTab();">Administration</a></li>
-                                <li id="mainPanelTabListLogs" role="presentation"><a href="#mainPanelTabPaneLogs" aria-controls="mainPanelTabPaneLogs" role="tab" data-toggle="tab" onclick="refreshLogsTab();">Logs</a></li>
-                                <li id="mainPanelTabListAbout" role="presentation"><a href="#mainPanelTabPaneAbout" aria-controls="mainPanelTabPaneAbout" role="tab" data-toggle="tab">About</a></li>
+                                <li id="mainPanelTabListAdmin" role="presentation"><a href="#mainPanelTabPaneAdmin" aria-controls="mainPanelTabPaneAdmin" role="tab" data-toggle="tab" onclick="refreshAdminTab();">账号管理</a></li>
+                                <li id="mainPanelTabListLogs" role="presentation"><a href="#mainPanelTabPaneLogs" aria-controls="mainPanelTabPaneLogs" role="tab" data-toggle="tab" onclick="refreshLogsTab();">日志</a></li>
+                                <li id="mainPanelTabListAbout" role="presentation"><a href="#mainPanelTabPaneAbout" aria-controls="mainPanelTabPaneAbout" role="tab" data-toggle="tab">关于</a></li>
                             </ul>
 
                             <div class="tab-content">
@@ -120,30 +120,30 @@
                                         <div class="pull-left">
                                             <div class="btn-group" data-toggle="buttons">
                                                 <label class="btn btn-default active">
-                                                    <input type="radio" name="rdStatType" value="lastHour" autocomplete="off" checked> Last Hour
+                                                    <input type="radio" name="rdStatType" value="lastHour" autocomplete="off" checked> 最近一小时
                                                 </label>
                                                 <label class="btn btn-default">
-                                                    <input type="radio" name="rdStatType" value="lastDay" autocomplete="off"> Last Day
+                                                    <input type="radio" name="rdStatType" value="lastDay" autocomplete="off"> 最近一天
                                                 </label>
                                                 <label class="btn btn-default">
-                                                    <input type="radio" name="rdStatType" value="lastWeek" autocomplete="off"> Last Week
+                                                    <input type="radio" name="rdStatType" value="lastWeek" autocomplete="off"> 最近一周
                                                 </label>
                                                 <label class="btn btn-default">
-                                                    <input type="radio" name="rdStatType" value="lastMonth" autocomplete="off"> Last Month
+                                                    <input type="radio" name="rdStatType" value="lastMonth" autocomplete="off"> 最近一月
                                                 </label>
                                                 <label class="btn btn-default">
-                                                    <input type="radio" name="rdStatType" value="lastYear" autocomplete="off"> Last Year
+                                                    <input type="radio" name="rdStatType" value="lastYear" autocomplete="off"> 最近一年
                                                 </label>
                                                 <label class="btn btn-default">
-                                                    <input type="radio" name="rdStatType" value="custom" autocomplete="off"> Custom
+                                                    <input type="radio" name="rdStatType" value="custom" autocomplete="off"> 自定义时间段
                                                 </label>
                                             </div>
                                         </div>
 
                                         <div id="divCustomDayWise" class="pull-left" style="padding: 4px 0px 4px 10px; display: none;">
-                                            <span style="margin-right: 6px;"><label for="dpCustomDayWiseStart">Start</label> <input type="date" id="dpCustomDayWiseStart" size="10"></span>
-                                            <span style="margin-right: 6px;"><label for="dpCustomDayWiseEnd">End</label> <input type="date" id="dpCustomDayWiseEnd" size="10"></span>
-                                            <button id="btnCustomDayWise" class="btn btn-default" type="button" style="font-size: 12px; padding: 3px 0px; width: 60px; vertical-align: top;">Show</button>
+                                            <span style="margin-right: 6px;"><label for="dpCustomDayWiseStart">起始</label> <input type="date" id="dpCustomDayWiseStart" size="10"></span>
+                                            <span style="margin-right: 6px;"><label for="dpCustomDayWiseEnd">结束</label> <input type="date" id="dpCustomDayWiseEnd" size="10"></span>
+                                            <button id="btnCustomDayWise" class="btn btn-default" type="button" style="font-size: 12px; padding: 3px 0px; width: 60px; vertical-align: top;">应用</button>
                                         </div>
 
                                         <div class="clearfix"></div>
@@ -156,55 +156,55 @@
                                             <div class="stats-item total-queries">
                                                 <div class="number" id="divDashboardStatsTotalQueries">100</div>
                                                 <div class="percentage">100%</div>
-                                                <div class="title">Total Queries</div>
+                                                <div class="title">查询</div>
                                             </div>
 
                                             <div class="stats-item no-error">
                                                 <div class="number" id="divDashboardStatsTotalNoError">70</div>
                                                 <div class="percentage" id="divDashboardStatsTotalNoErrorPercentage">0%</div>
-                                                <div class="title">No Error</div>
+                                                <div class="title">正常查询</div>
                                             </div>
 
                                             <div class="stats-item server-failure">
                                                 <div class="number" id="divDashboardStatsTotalServerFailure">5</div>
                                                 <div class="percentage" id="divDashboardStatsTotalServerFailurePercentage">0%</div>
-                                                <div class="title">Server Failure</div>
+                                                <div class="title">错误查询</div>
                                             </div>
 
                                             <div class="stats-item nxdomain">
                                                 <div class="number" id="divDashboardStatsTotalNxDomain">5</div>
                                                 <div class="percentage" id="divDashboardStatsTotalNxDomainPercentage">0%</div>
-                                                <div class="title">NX Domain</div>
+                                                <div class="title">NX Domain响应</div>
                                             </div>
 
                                             <div class="stats-item refused">
                                                 <div class="number" id="divDashboardStatsTotalRefused">10</div>
                                                 <div class="percentage" id="divDashboardStatsTotalRefusedPercentage">0%</div>
-                                                <div class="title">Refused</div>
+                                                <div class="title">拒绝的查询</div>
                                             </div>
 
                                             <div class="stats-item auth-hit">
                                                 <div class="number" id="divDashboardStatsTotalAuthHit">10</div>
                                                 <div class="percentage" id="divDashboardStatsTotalAuthHitPercentage">0%</div>
-                                                <div class="title">Authoritative</div>
+                                                <div class="title">权威查询</div>
                                             </div>
 
                                             <div class="stats-item recursions">
                                                 <div class="number" id="divDashboardStatsTotalRecursions">10</div>
                                                 <div class="percentage" id="divDashboardStatsTotalRecursionsPercentage">0%</div>
-                                                <div class="title">Recursive</div>
+                                                <div class="title">归递查询</div>
                                             </div>
 
                                             <div class="stats-item cache-hit">
                                                 <div class="number" id="divDashboardStatsTotalCacheHit">10</div>
                                                 <div class="percentage" id="divDashboardStatsTotalCacheHitPercentage">0%</div>
-                                                <div class="title">Cached</div>
+                                                <div class="title">缓存命中</div>
                                             </div>
 
                                             <div class="stats-item blocked">
                                                 <div class="number" id="divDashboardStatsTotalBlocked">10</div>
                                                 <div class="percentage" id="divDashboardStatsTotalBlockedPercentage">0%</div>
-                                                <div class="title">Blocked</div>
+                                                <div class="title">黑名单拒绝</div>
                                             </div>
 
                                             <div class="stats-item dropped">
@@ -216,7 +216,7 @@
                                             <div class="stats-item stats-last-item clients">
                                                 <div class="number" id="divDashboardStatsTotalClients">10</div>
                                                 <div class="percentage">&nbsp;</div>
-                                                <div class="title">Clients</div>
+                                                <div class="title">查询者</div>
                                             </div>
                                         </div>
 
@@ -249,7 +249,7 @@
                                                 <div class="zone-stats-panel">
                                                     <div class="stats-item">
                                                         <div class="number" id="divDashboardStatsZones">10</div>
-                                                        <div class="title">Zones</div>
+                                                        <div class="title">区域</div>
                                                     </div>
 
                                                     <div class="stats-item">
@@ -291,8 +291,8 @@
                                                     <table class="table table-hover">
                                                         <thead>
                                                             <tr>
-                                                                <th>Client</th>
-                                                                <th>Queries</th>
+                                                                <th>查询者</th>
+                                                                <th>查询次数</th>
                                                                 <th style="width: 36px;"></th>
                                                             </tr>
                                                         </thead>
@@ -309,7 +309,7 @@
                                             <div style="float: left; width: 50%; padding-right: 7px;">
                                                 <div class="panel panel-default" style="margin-bottom: 0px;">
                                                     <div class="panel-heading" style="height: 41px; padding: 4px 6px;">
-                                                        <div class="pull-left" style="padding: 6px 8px;">Top Domains</div>
+                                                        <div class="pull-left" style="padding: 6px 8px;">被查询域名排行</div>
                                                         <div class="pull-right">
                                                             <button type="button" class="btn btn-default" data-loading-text="More" onclick="showTopStats('TopDomains', 1000);" style="font-size: 12px; padding: 4px 14px; margin: 2px 0px;">More</button>
                                                         </div>
@@ -318,8 +318,8 @@
                                                     <table class="table table-hover">
                                                         <thead>
                                                             <tr>
-                                                                <th>Domain</th>
-                                                                <th>Hits</th>
+                                                                <th>域名</th>
+                                                                <th>查询次数</th>
                                                                 <th style="width: 36px;"></th>
                                                             </tr>
                                                         </thead>
@@ -332,7 +332,7 @@
                                             <div style="float: right; width: 50%; padding-left: 7px;">
                                                 <div class="panel panel-default" style="margin-bottom: 0px;">
                                                     <div class="panel-heading" style="height: 41px; padding: 4px 6px;">
-                                                        <div class="pull-left" style="padding: 6px 8px;">Top Blocked Domains</div>
+                                                        <div class="pull-left" style="padding: 6px 8px;">被查询的封禁域名排行</div>
                                                         <div class="pull-right">
                                                             <button type="button" class="btn btn-default" data-loading-text="More" onclick="showTopStats('TopBlockedDomains', 1000);" style="font-size: 12px; padding: 4px 14px; margin: 2px 0px;">More</button>
                                                         </div>
@@ -341,8 +341,8 @@
                                                     <table class="table table-hover">
                                                         <thead>
                                                             <tr>
-                                                                <th>Domain</th>
-                                                                <th>Hits</th>
+                                                                <th>域名</th>
+                                                                <th>被查询次数</th>
                                                                 <th style="width: 36px;"></th>
                                                             </tr>
                                                         </thead>
@@ -363,7 +363,7 @@
                                     <div id="divViewZones" style="margin-top: 10px;">
                                         <div style="margin-bottom: 16px;">
                                             <div style="float: right;">
-                                                <button type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showAddZoneModal();">Add Zone</button>
+                                                <button type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showAddZoneModal();">添加区域</button>
                                             </div>
                                             <div style="clear: both;"></div>
                                         </div>
@@ -372,16 +372,16 @@
                                             <form class="pull-left">
                                                 <div class="form-group">
                                                     <input id="txtZonesEdit" class="form-control" style="width: 300px;" type="text" placeholder="example.com" />
-                                                    <button type="submit" class="btn btn-primary" onclick="showEditZone(); return false;">Edit</button>
+                                                    <button type="submit" class="btn btn-primary" onclick="showEditZone(); return false;">前往</button>
                                                 </div>
                                             </form>
                                             <form class="pull-right">
                                                 <div class="form-group">
-                                                    <label for="txtZonesPageNumber">Page Number</label>
+                                                    <label for="txtZonesPageNumber">页码</label>
                                                     <input id="txtZonesPageNumber" class="form-control" style="width: 100px;" type="number" />
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="optZonesPerPage">Zones Per Page</label>
+                                                    <label for="optZonesPerPage">每页显示数量</label>
                                                     <select class="form-control" id="optZonesPerPage">
                                                         <option selected>10</option>
                                                         <option>25</option>
@@ -391,14 +391,14 @@
                                                         <option>500</option>
                                                     </select>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary form-group" style="margin-right: 0px;" onclick="refreshZones(); return false;">Go</button>
+                                                <button type="submit" class="btn btn-primary form-group" style="margin-right: 0px;" onclick="refreshZones(); return false;">应用</button>
                                             </form>
                                             <div class="clearfix"></div>
                                         </div>
 
                                         <div style="padding: 8px;">
                                             <div class="pull-left" style="padding-top: 8px;">
-                                                <b id="tableZonesTopStatus">0 zones</b>
+                                                <b id="tableZonesTopStatus">没有区域</b>
                                             </div>
                                             <div class="pull-right">
                                                 <nav aria-label="Page navigation">
@@ -416,13 +416,13 @@
                                             <thead>
                                                 <tr>
                                                     <th><a href="#" onclick="sortTable('tableZonesBody', 0); return false;">#</a></th>
-                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 1); return false;">Zone</a></th>
-                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 2); return false;">Type</a></th>
+                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 1); return false;">区域</a></th>
+                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 2); return false;">类型</a></th>
                                                     <th><a href="#" onclick="sortTable('tableZonesBody', 3); return false;">DNSSEC</a></th>
-                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 4); return false;">Status</a></th>
+                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 4); return false;">状态</a></th>
                                                     <th><a href="#" onclick="sortTable('tableZonesBody', 5); return false;">Serial</a></th>
-                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 6); return false;">Expiry</a></th>
-                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 7); return false;">Last Modified</a></th>
+                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 6); return false;">到期时间</a></th>
+                                                    <th><a href="#" onclick="sortTable('tableZonesBody', 7); return false;">最后修改日期</a></th>
                                                     <th style="width: 36px;"></th>
                                                 </tr>
                                             </thead>
@@ -432,7 +432,7 @@
                                                     <td colspan="9">
                                                         <div>
                                                             <div class="pull-left" style="padding-top: 8px;">
-                                                                <b id="tableZonesFooterStatus">0 zones</b>
+                                                                <b id="tableZonesFooterStatus">没有区域</b>
                                                             </div>
                                                             <div class="pull-right">
                                                                 <nav aria-label="Page navigation">
@@ -453,7 +453,7 @@
 
                                     <div id="divEditZone" style="display: none;">
                                         <ul class="pager" style="margin: 0px;">
-                                            <li class="previous"><a href="#" onclick="refreshZones(); return false;"><span aria-hidden="true">&larr;</span> Back</a></li>
+                                            <li class="previous"><a href="#" onclick="refreshZones(); return false;"><span aria-hidden="true">&larr;</span> 返回</a></li>
                                         </ul>
 
                                         <div style="padding: 10px 0px;">
@@ -461,38 +461,38 @@
                                             <div style="float: left;">
                                                 <span id="titleEditZoneType" class="label label-default">Primary</span>
                                                 <span id="titleDnssecStatusEditZone" class="label label-default">DNSSEC</span>
-                                                <span id="titleStatusEditZone" class="label label-success">Enabled</span>
+                                                <span id="titleStatusEditZone" class="label label-success">启用</span>
                                                 <span id="titleEditZoneExpiry" style="font-size: 10px; font-weight: bold;">Expiry: 01 Jan 2020 00:00:00</span>
                                             </div>
                                             <div style="float: right; padding: 2px 0px;">
-                                                <button id="btnEditZoneAddRecord" type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showAddRecordModal();">Add Record</button>
-                                                <button id="btnEnableZoneEditZone" type="button" class="btn btn-default" style="padding: 2px 0px; width: 100px;" onclick="enableZone(this);">Enable Zone</button>
-                                                <button id="btnDisableZoneEditZone" type="button" class="btn btn-warning" style="padding: 2px 0px; width: 100px;" onclick="disableZone(this);">Disable Zone</button>
-                                                <button id="btnEditZoneDeleteZone" type="button" class="btn btn-danger" style="padding: 2px 0px; width: 100px;" onclick="deleteZone(this);">Delete Zone</button>
-                                                <button id="btnZoneResync" type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="resyncZone(this, $('#titleEditZone').attr('data-zone'));" data-loading-text="Resyncing...">Resync</button>
+                                                <button id="btnEditZoneAddRecord" type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showAddRecordModal();">添加记录</button>
+                                                <button id="btnEnableZoneEditZone" type="button" class="btn btn-default" style="padding: 2px 0px; width: 100px;" onclick="enableZone(this);">启用区域</button>
+                                                <button id="btnDisableZoneEditZone" type="button" class="btn btn-warning" style="padding: 2px 0px; width: 100px;" onclick="disableZone(this);">禁用区域</button>
+                                                <button id="btnEditZoneDeleteZone" type="button" class="btn btn-danger" style="padding: 2px 0px; width: 100px;" onclick="deleteZone(this);">删除区域</button>
+                                                <button id="btnZoneResync" type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="resyncZone(this, $('#titleEditZone').attr('data-zone'));" data-loading-text="Resyncing...">同步区域</button>
                                                 <div id="divOptionsMenu" class="btn-group">
                                                     <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 2px 0px; width: 100px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Options <span class="caret"></span>
+                                                        选项 <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
-                                                        <li id="lnkImportZone"><a href="#" onclick="showImportZoneModal($('#titleEditZone').attr('data-zone')); return false;">Import Zone</a></li>
-                                                        <li id="lnkExportZone"><a href="#" onclick="exportZone($('#titleEditZone').attr('data-zone')); return false;">Export Zone</a></li>
-                                                        <li id="lnkZoneConvert"><a href="#" onclick="showConvertZoneModal($('#titleEditZone').attr('data-zone'), $('#titleEditZone').attr('data-zone-type')); return false;">Convert Zone</a></li>
-                                                        <li id="lnkZoneOptions"><a href="#" onclick="showZoneOptionsModal($('#titleEditZone').attr('data-zone')); return false;">Zone Options</a></li>
+                                                        <li id="lnkImportZone"><a href="#" onclick="showImportZoneModal($('#titleEditZone').attr('data-zone')); return false;">导入区域</a></li>
+                                                        <li id="lnkExportZone"><a href="#" onclick="exportZone($('#titleEditZone').attr('data-zone')); return false;">导出区域</a></li>
+                                                        <li id="lnkZoneConvert"><a href="#" onclick="showConvertZoneModal($('#titleEditZone').attr('data-zone'), $('#titleEditZone').attr('data-zone-type')); return false;">更改区域类型</a></li>
+                                                        <li id="lnkZoneOptions"><a href="#" onclick="showZoneOptionsModal($('#titleEditZone').attr('data-zone')); return false;">区域设置</a></li>
                                                     </ul>
                                                 </div>
-                                                <button id="btnZonePermissions" type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showZonePermissionsModal($('#titleEditZone').attr('data-zone'));">Permissions</button>
+                                                <button id="btnZonePermissions" type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showZonePermissionsModal($('#titleEditZone').attr('data-zone'));">权限管理</button>
                                                 <div id="divZoneDnssecOptions" class="btn-group">
                                                     <button type="button" class="btn btn-primary dropdown-toggle" style="padding: 2px 0px; width: 100px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         DNSSEC <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
-                                                        <li id="lnkZoneDnssecSignZone"><a href="#" onclick="showSignZoneModal($('#titleEditZone').attr('data-zone')); return false;">Sign Zone</a></li>
-                                                        <li id="lnkZoneDnssecHideRecords"><a href="#" onclick="toggleHideDnssecRecords(true); return false;">Hide DNSSEC Records</a></li>
-                                                        <li id="lnkZoneDnssecShowRecords"><a href="#" onclick="toggleHideDnssecRecords(false); return false;">Show DNSSEC Records</a></li>
-                                                        <li id="lnkZoneDnssecViewDsRecords"><a href="#" onclick="showViewDsModal($('#titleEditZone').attr('data-zone')); return false;">View DS Info</a></li>
-                                                        <li id="lnkZoneDnssecProperties"><a href="#" onclick="showDnssecPropertiesModal($('#titleEditZone').attr('data-zone')); return false;">Properties</a></li>
-                                                        <li id="lnkZoneDnssecUnsignZone"><a href="#" onclick="showUnsignZoneModal($('#titleEditZone').attr('data-zone')); return false;">Unsign Zone</a></li>
+                                                        <li id="lnkZoneDnssecSignZone"><a href="#" onclick="showSignZoneModal($('#titleEditZone').attr('data-zone')); return false;">签名区域</a></li>
+                                                        <li id="lnkZoneDnssecHideRecords"><a href="#" onclick="toggleHideDnssecRecords(true); return false;">隐藏DNSSEC记录</a></li>
+                                                        <li id="lnkZoneDnssecShowRecords"><a href="#" onclick="toggleHideDnssecRecords(false); return false;">显示DNSSEC记录</a></li>
+                                                        <li id="lnkZoneDnssecViewDsRecords"><a href="#" onclick="showViewDsModal($('#titleEditZone').attr('data-zone')); return false;">DNSSEC信息</a></li>
+                                                        <li id="lnkZoneDnssecProperties"><a href="#" onclick="showDnssecPropertiesModal($('#titleEditZone').attr('data-zone')); return false;">属性</a></li>
+                                                        <li id="lnkZoneDnssecUnsignZone"><a href="#" onclick="showUnsignZoneModal($('#titleEditZone').attr('data-zone')); return false;">注销区域</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -502,11 +502,11 @@
                                         <div class="form-inline">
                                             <form class="pull-right">
                                                 <div class="form-group">
-                                                    <label for="txtEditZonePageNumber">Page Number</label>
+                                                    <label for="txtEditZonePageNumber">页码</label>
                                                     <input id="txtEditZonePageNumber" class="form-control" style="width: 100px;" type="number" />
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="optEditZoneRecordsPerPage">Records Per Page</label>
+                                                    <label for="optEditZoneRecordsPerPage">每页显示数量</label>
                                                     <select class="form-control" id="optEditZoneRecordsPerPage">
                                                         <option selected>10</option>
                                                         <option>25</option>
@@ -516,7 +516,7 @@
                                                         <option>500</option>
                                                     </select>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary form-group" style="margin-right: 0px;" onclick="showEditZonePage(); return false;">Go</button>
+                                                <button type="submit" class="btn btn-primary form-group" style="margin-right: 0px;" onclick="showEditZonePage(); return false;">应用</button>
                                             </form>
                                             <div class="clearfix"></div>
                                         </div>
@@ -541,10 +541,10 @@
                                             <thead>
                                                 <tr>
                                                     <th><a href="#" onclick="sortTable('tableEditZoneBody', 0); return false;">#</a></th>
-                                                    <th><a href="#" onclick="sortTable('tableEditZoneBody', 1); return false;">Name</a></th>
-                                                    <th><a href="#" onclick="sortTable('tableEditZoneBody', 2); return false;">Type</a></th>
+                                                    <th><a href="#" onclick="sortTable('tableEditZoneBody', 1); return false;">名称</a></th>
+                                                    <th><a href="#" onclick="sortTable('tableEditZoneBody', 2); return false;">类型</a></th>
                                                     <th><a href="#" onclick="sortTable('tableEditZoneBody', 3); return false;">TTL</a></th>
-                                                    <th><a href="#" onclick="sortTable('tableEditZoneBody', 4); return false;">Data</a></th>
+                                                    <th><a href="#" onclick="sortTable('tableEditZoneBody', 4); return false;">记录值</a></th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -583,7 +583,7 @@
                                                 <input type="text" class="form-control" style="width: inherit;" id="txtCacheZone" placeholder="example.com">
                                             </div>
                                             <div class="form-group">
-                                                <button id="btnBrowseCacheZone" type="submit" class="btn btn-primary" data-loading-text="Browse" onclick="refreshCachedZonesList($('#txtCacheZone').val()); return false;">Browse</button>
+                                                <button id="btnBrowseCacheZone" type="submit" class="btn btn-primary" data-loading-text="Browse" onclick="refreshCachedZonesList($('#txtCacheZone').val()); return false;">浏览</button>
                                             </div>
                                         </form>
 
@@ -596,8 +596,8 @@
                                             <div class="panel-heading" style="height: 36px; padding: 4px 6px;">
                                                 <div id="txtCachedZoneViewerTitle" style="float: left; padding: 4px;">technitium.com</div>
                                                 <div style="float: right;">
-                                                    <button id="btnDeleteCachedZone" type="button" class="btn btn-warning" data-loading-text="Delete" onclick="deleteCachedZone();" style="font-size: 12px; padding: 4px 6px;">Delete</button>
-                                                    <button type="button" class="btn btn-danger" data-loading-text="Delete" onclick="flushDnsCache(this);" style="font-size: 12px; padding: 4px 6px;">Flush</button>
+                                                    <button id="btnDeleteCachedZone" type="button" class="btn btn-warning" data-loading-text="Delete" onclick="deleteCachedZone();" style="font-size: 12px; padding: 4px 6px;">删除</button>
+                                                    <button type="button" class="btn btn-danger" data-loading-text="Delete" onclick="flushDnsCache(this);" style="font-size: 12px; padding: 4px 6px;">刷新</button>
                                                 </div>
                                             </div>
 
@@ -619,8 +619,8 @@
                                                 <input type="text" class="form-control" style="width: inherit;" id="txtAllowZone" placeholder="example.com">
                                             </div>
                                             <div class="form-group">
-                                                <button id="btnAllowZone" type="submit" class="btn btn-primary" data-loading-text="Allow" onclick="allowZone(); return false;">Allow</button>
-                                                <button id="btnBrowseAllowZone" type="button" class="btn btn-default" data-loading-text="Browse" onclick="refreshAllowedZonesList($('#txtAllowZone').val());">Browse</button>
+                                                <button id="btnAllowZone" type="submit" class="btn btn-primary" data-loading-text="Allow" onclick="allowZone(); return false;">添加到白名单</button>
+                                                <button id="btnBrowseAllowZone" type="button" class="btn btn-default" data-loading-text="Browse" onclick="refreshAllowedZonesList($('#txtAllowZone').val());">浏览</button>
                                             </div>
                                         </form>
 
@@ -633,10 +633,10 @@
                                             <div class="panel-heading" style="height: 36px; padding: 4px 6px;">
                                                 <div id="txtAllowedZoneViewerTitle" style="float: left; padding: 4px;">technitium.com</div>
                                                 <div style="float: right;">
-                                                    <button type="button" class="btn btn-default" data-loading-text="Import" onclick="resetImportAllowedZonesModal();" data-toggle="modal" data-target="#modalImportAllowedZones" style="font-size: 12px; padding: 4px 6px;">Import</button>
-                                                    <button type="button" class="btn btn-default" data-loading-text="Export" onclick="exportAllowedZones();" style="font-size: 12px; padding: 4px 6px;">Export</button>
-                                                    <button id="btnDeleteAllowedZone" type="button" class="btn btn-warning" data-loading-text="Delete" onclick="deleteAllowedZone();" style="font-size: 12px; padding: 4px 6px;">Delete</button>
-                                                    <button id="btnFlushAllowedZone" type="button" class="btn btn-danger" data-loading-text="Flush" onclick="flushAllowedZone();" style="font-size: 12px; padding: 4px 6px;">Flush</button>
+                                                    <button type="button" class="btn btn-default" data-loading-text="Import" onclick="resetImportAllowedZonesModal();" data-toggle="modal" data-target="#modalImportAllowedZones" style="font-size: 12px; padding: 4px 6px;">导入</button>
+                                                    <button type="button" class="btn btn-default" data-loading-text="Export" onclick="exportAllowedZones();" style="font-size: 12px; padding: 4px 6px;">导出</button>
+                                                    <button id="btnDeleteAllowedZone" type="button" class="btn btn-warning" data-loading-text="Delete" onclick="deleteAllowedZone();" style="font-size: 12px; padding: 4px 6px;">删除</button>
+                                                    <button id="btnFlushAllowedZone" type="button" class="btn btn-danger" data-loading-text="Flush" onclick="flushAllowedZone();" style="font-size: 12px; padding: 4px 6px;">清空</button>
                                                 </div>
                                             </div>
 
@@ -658,8 +658,8 @@
                                                 <input type="text" class="form-control" style="width: inherit;" id="txtBlockZone" placeholder="example.com">
                                             </div>
                                             <div class="form-group">
-                                                <button id="btnBlockZone" type="submit" class="btn btn-primary" data-loading-text="Block" onclick="blockZone(); return false;">Block</button>
-                                                <button id="btnBrowseBlockZone" type="button" class="btn btn-default" data-loading-text="Browse" onclick="refreshBlockedZonesList($('#txtBlockZone').val());">Browse</button>
+                                                <button id="btnBlockZone" type="submit" class="btn btn-primary" data-loading-text="Block" onclick="blockZone(); return false;">添加到黑名单</button>
+                                                <button id="btnBrowseBlockZone" type="button" class="btn btn-default" data-loading-text="Browse" onclick="refreshBlockedZonesList($('#txtBlockZone').val());">浏览</button>
                                             </div>
                                         </form>
 
@@ -672,10 +672,10 @@
                                             <div class="panel-heading" style="height: 36px; padding: 4px 6px;">
                                                 <div id="txtBlockedZoneViewerTitle" style="float: left; padding: 4px;">technitium.com</div>
                                                 <div style="float: right;">
-                                                    <button id="btnImportBlockedZone" type="button" class="btn btn-default" data-loading-text="Import" onclick="resetImportBlockedZonesModal();" data-toggle="modal" data-target="#modalImportBlockedZones" style="font-size: 12px; padding: 4px 6px;">Import</button>
-                                                    <button id="btnExportBlockedZone" type="button" class="btn btn-default" data-loading-text="Export" onclick="exportBlockedZones();" style="font-size: 12px; padding: 4px 6px;">Export</button>
-                                                    <button id="btnDeleteBlockedZone" type="button" class="btn btn-warning" data-loading-text="Delete" onclick="deleteBlockedZone();" style="font-size: 12px; padding: 4px 6px;">Delete</button>
-                                                    <button id="btnFlushBlockedZone" type="button" class="btn btn-danger" data-loading-text="Flush" onclick="flushBlockedZone();" style="font-size: 12px; padding: 4px 6px;">Flush</button>
+                                                    <button id="btnImportBlockedZone" type="button" class="btn btn-default" data-loading-text="Import" onclick="resetImportBlockedZonesModal();" data-toggle="modal" data-target="#modalImportBlockedZones" style="font-size: 12px; padding: 4px 6px;">导入</button>
+                                                    <button id="btnExportBlockedZone" type="button" class="btn btn-default" data-loading-text="Export" onclick="exportBlockedZones();" style="font-size: 12px; padding: 4px 6px;">导出</button>
+                                                    <button id="btnDeleteBlockedZone" type="button" class="btn btn-warning" data-loading-text="Delete" onclick="deleteBlockedZone();" style="font-size: 12px; padding: 4px 6px;">删除</button>
+                                                    <button id="btnFlushBlockedZone" type="button" class="btn btn-danger" data-loading-text="Flush" onclick="flushBlockedZone();" style="font-size: 12px; padding: 4px 6px;">清空</button>
                                                 </div>
                                             </div>
 
@@ -695,8 +695,8 @@
                                     <div id="divViewApps" style="margin-top: 10px;">
                                         <div>
                                             <div style="float: right;">
-                                                <button type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showStoreAppsModal();">App Store</button>
-                                                <button type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showInstallAppModal();">Install</button>
+                                                <button type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showStoreAppsModal();">应用商店</button>
+                                                <button type="button" class="btn btn-primary" style="padding: 2px 0px; width: 100px;" onclick="showInstallAppModal();">从本地安装</button>
                                             </div>
                                             <div style="clear: both;"></div>
                                         </div>
@@ -704,7 +704,7 @@
                                         <table id="tableApps" class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th style="min-width: 100px;"><a href="#" onclick="sortTable('tableAppsBody', 0); return false;">Installed Apps</a></th>
+                                                    <th style="min-width: 100px;"><a href="#" onclick="sortTable('tableAppsBody', 0); return false;">已安装的APP</a></th>
                                                     <th style="width: 96px;"></th>
                                                 </tr>
                                             </thead>
@@ -722,7 +722,7 @@
                                     <form class="form-inline well" style="padding-bottom: 6px; margin-bottom: 15px;">
                                         <div>
                                             <div class="form-group">
-                                                <label for="txtDnsClientNameServer">Server</label>
+                                                <label for="txtDnsClientNameServer">服务器</label>
                                                 <div class="input-group dropdown">
                                                     <input type="text" class="form-control dropdown-toggle" style="min-width: 270px; border-right: 0px;" id="txtDnsClientNameServer" value="This Server {this-server}">
                                                     <ul id="optDnsClientNameServers" class="dropdown-menu" style="max-height: 500px; overflow-y: scroll;">
@@ -818,12 +818,12 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="txtDnsClientDomain">Domain</label>
+                                                <label for="txtDnsClientDomain">域</label>
                                                 <input type="text" class="form-control" style="min-width: 295px;" id="txtDnsClientDomain" placeholder="example.com">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="optDnsClientType">Type</label>
+                                                <label for="optDnsClientType">类型</label>
                                                 <select class="form-control" id="optDnsClientType" style="padding-left: 6px; padding-right: 0px;">
                                                     <option>A</option>
                                                     <option>NS</option>
@@ -873,15 +873,15 @@
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="checkbox" id="chkDnsClientDnssecValidation"> Enable DNSSEC Validation
+                                                        <input type="checkbox" id="chkDnsClientDnssecValidation"> 启用 DNSSEC 验证
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary" id="btnDnsClientResolve" data-loading-text="Resolving..." onclick="resolveQuery(); return false;" style="margin-right: 6px;">Resolve</button>
-                                                <button type="button" class="btn btn-warning" id="btnDnsClientImport" data-loading-text="Importing..." onclick="resolveQuery(true);">Import</button>
+                                                <button type="submit" class="btn btn-primary" id="btnDnsClientResolve" data-loading-text="查询中..." onclick="resolveQuery(); return false;" style="margin-right: 6px;">查询</button>
+                                                <button type="button" class="btn btn-warning" id="btnDnsClientImport" data-loading-text="导入中..." onclick="resolveQuery(true);">导入</button>
                                             </div>
                                         </div>
                                     </form>
@@ -928,12 +928,12 @@
                                         <form style="margin-top: 10px;" onsubmit="return false;">
 
                                             <ul class="nav nav-tabs" role="tablist">
-                                                <li id="settingsTabListGeneral" role="presentation" class="active"><a href="#settingsTabPaneGeneral" aria-controls="settingsTabPaneGeneral" role="tab" data-toggle="tab">General</a></li>
-                                                <li id="settingsTabListWebService" role="presentation"><a href="#settingsTabPaneWebService" aria-controls="settingsTabPaneWebService" role="tab" data-toggle="tab">Web Service</a></li>
-                                                <li id="settingsTabListOptionalProtocols" role="presentation"><a href="#settingsTabPaneOptionalProtocols" aria-controls="settingsTabPaneOptionalProtocols" role="tab" data-toggle="tab">Optional Protocols</a></li>
+                                                <li id="settingsTabListGeneral" role="presentation" class="active"><a href="#settingsTabPaneGeneral" aria-controls="settingsTabPaneGeneral" role="tab" data-toggle="tab">通用</a></li>
+                                                <li id="settingsTabListWebService" role="presentation"><a href="#settingsTabPaneWebService" aria-controls="settingsTabPaneWebService" role="tab" data-toggle="tab">Web 管理面板</a></li>
+                                                <li id="settingsTabListOptionalProtocols" role="presentation"><a href="#settingsTabPaneOptionalProtocols" aria-controls="settingsTabPaneOptionalProtocols" role="tab" data-toggle="tab">可选协议</a></li>
                                                 <li id="settingsTabListTsig" role="presentation"><a href="#settingsTabPaneTsig" aria-controls="settingsTabPaneTsig" role="tab" data-toggle="tab">TSIG</a></li>
-                                                <li id="settingsTabListRecursion" role="presentation"><a href="#settingsTabPaneRecursion" aria-controls="settingsTabPaneRecursion" role="tab" data-toggle="tab">Recursion</a></li>
-                                                <li id="settingsTabListCache" role="presentation"><a href="#settingsTabPaneCache" aria-controls="settingsTabPaneCache" role="tab" data-toggle="tab">Cache</a></li>
+                                                <li id="settingsTabListRecursion" role="presentation"><a href="#settingsTabPaneRecursion" aria-controls="settingsTabPaneRecursion" role="tab" data-toggle="tab">递归解析</a></li>
+                                                <li id="settingsTabListCache" role="presentation"><a href="#settingsTabPaneCache" aria-controls="settingsTabPaneCache" role="tab" data-toggle="tab">缓存</a></li>
                                                 <li id="settingsTabListBlocking" role="presentation"><a href="#settingsTabPaneBlocking" aria-controls="settingsTabPaneBlocking" role="tab" data-toggle="tab">Blocking</a></li>
                                                 <li id="settingsTabListProxyForwarders" role="presentation"><a href="#settingsTabPaneProxyForwarders" aria-controls="settingsTabPaneProxyForwarders" role="tab" data-toggle="tab">Proxy &amp; Forwarders</a></li>
                                                 <li id="settingsTabListLogging" role="presentation"><a href="#settingsTabPaneLogging" aria-controls="settingsTabPaneLogging" role="tab" data-toggle="tab">Logging</a></li>
@@ -943,19 +943,19 @@
                                                 <div id="settingsTabPaneGeneral" role="tabpanel" class="tab-pane active">
                                                     <div class="well well-sm form-horizontal">
                                                         <div class="form-group">
-                                                            <label for="txtDnsServerDomain" class="col-sm-3 control-label">DNS Server Domain</label>
+                                                            <label for="txtDnsServerDomain" class="col-sm-3 control-label">服务器域名</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" class="form-control" id="txtDnsServerDomain" placeholder="domain name">
                                                             </div>
-                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">The primary fully qualified domain name used by this DNS Server to identify itself.</div>
+                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">此DNS服务器用于标识自身的主域名</div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsServerLocalEndPoints" class="col-sm-3 control-label">DNS Server Local End Points</label>
+                                                            <label for="txtDnsServerLocalEndPoints" class="col-sm-3 control-label">DNS本机地址和端口</label>
                                                             <div class="col-sm-6">
                                                                 <textarea id="txtDnsServerLocalEndPoints" class="form-control" rows="3" spellcheck="false"></textarea>
                                                             </div>
-                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">Local end points are the network interface IP addresses and ports you want the DNS Server to listen for requests. The default values work for Windows but on Linux when you have multiple network adapters, you must explicitly specify the network adapter IP addresses here as the local end points.</div>
+                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">本地端点是指您希望DNS服务器监听请求的网络接口IP地址和端口。默认值适用于Windows环境，但在Linux环境下，如果您拥有多个网络适配器，则必须在此处明确指定网络适配器的IP地址作为本地端点</div>
                                                         </div>
 
                                                         <div class="form-group">
@@ -974,17 +974,17 @@
                                                             <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">The IPv6 source addresses that the DNS server must use for making all outbound DNS requests when the server is connected to two or more networks. Network addresses are also accepted. By default, the IPv6 address of the network with a default route will be used as the source address. Note that this option will be used only when <code>Prefer IPv6</code> option is enabled.</div>
                                                         </div>
 
-                                                        <div>Note! The DNS Server local end point changes will be automatically applied and so you do not need to manually restart the main service.</div>
+                                                        <div>注意！DNS服务器本地的更改将会自动应用，因此您无需手动重启主服务</div>
                                                     </div>
 
                                                     <div class="well well-sm form-horizontal">
                                                         <div class="form-group">
-                                                            <label for="txtDefaultRecordTtl" class="col-sm-3 control-label">Default Record TTL</label>
+                                                            <label for="txtDefaultRecordTtl" class="col-sm-3 control-label">默认 TTL</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtDefaultRecordTtl" placeholder="TTL" style="width: 100px; display: inline;">
-                                                                <span>seconds (default 3600)</span>
+                                                                <span>秒 (默认 3600)</span>
                                                             </div>
-                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">The default TTL value to use if not specified when adding or updating records in a Zone.</div>
+                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">在区域中添加或更新记录时，如果没有指定，默认使用的TTL（缓存时间）值</div>
                                                         </div>
 
                                                         <div class="form-group">
@@ -1032,7 +1032,7 @@
 
                                                     <div class="well well-sm form-horizontal">
                                                         <div class="form-group">
-                                                            <label class="col-sm-3 control-label">IPv6 Support</label>
+                                                            <label class="col-sm-3 control-label">IPV6支持</label>
                                                             <div class="col-sm-8">
                                                                 <div class="checkbox">
                                                                     <label>
@@ -1190,25 +1190,25 @@
 
                                                     <div class="well well-sm form-horizontal">
                                                         <div class="form-group">
-                                                            <label for="txtClientTimeout" class="col-sm-3 control-label">Client Timeout</label>
+                                                            <label for="txtClientTimeout" class="col-sm-3 control-label">响应超时时间</label>
                                                             <div class="col-sm-7">
                                                                 <input type="number" class="form-control" id="txtClientTimeout" placeholder="timeout" style="width: 100px; display: inline;">
-                                                                <span>milliseconds (valid range 1000-10000; default 2000)</span>
+                                                                <span>毫秒 (有效值 1000-10000; 默认 2000)</span>
                                                             </div>
-                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">The amount of time the DNS server must wait before responding with a <code>ServerFailure</code> response to a client request when no answer is available.</div>
+                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">当DNS服务器无法获取任何响应时，需要等待多久才能向客户端请求返回一个<code>ServerFailure</code>响应</div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtTcpSendTimeout" class="col-sm-3 control-label">TCP Send Timeout</label>
+                                                            <label for="txtTcpSendTimeout" class="col-sm-3 control-label">TCP 发送超时时间</label>
                                                             <div class="col-sm-7">
                                                                 <input type="number" class="form-control" id="txtTcpSendTimeout" placeholder="timeout" style="width: 100px; display: inline;">
                                                                 <span>milliseconds (valid range 1000-90000; default 10000)</span>
                                                             </div>
-                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">The amount of time a TCP socket must wait for an <code>ACK</code> before closing the connection. This option will apply for DNS requests being received by the DNS Server over TCP, TLS, or HTTPS transports.</div>
+                                                            <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">TCP套接字在关闭连接前等待<code>ACK</code>确认所需的时间。此选项适用于DNS服务器通过TCP、TLS或HTTPS传输协议接收到的DNS请求</div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtTcpReceiveTimeout" class="col-sm-3 control-label">TCP Receive Timeout</label>
+                                                            <label for="txtTcpReceiveTimeout" class="col-sm-3 control-label">TCP 接收超时时间</label>
                                                             <div class="col-sm-7">
                                                                 <input type="number" class="form-control" id="txtTcpReceiveTimeout" placeholder="timeout" style="width: 100px; display: inline;">
                                                                 <span>milliseconds (valid range 1000-90000; default 10000)</span>
@@ -1248,7 +1248,7 @@
                                                 <div id="settingsTabPaneWebService" role="tabpanel" class="tab-pane">
                                                     <div class="well well-sm form-horizontal">
                                                         <div class="form-group">
-                                                            <label for="txtWebServiceLocalAddresses" class="col-sm-3 control-label">Web Service Local Addresses</label>
+                                                            <label for="txtWebServiceLocalAddresses" class="col-sm-3 control-label">Web 管理面板服务地址</label>
                                                             <div class="col-sm-6">
                                                                 <textarea id="txtWebServiceLocalAddresses" class="form-control" rows="3" spellcheck="false"></textarea>
                                                             </div>
@@ -1256,7 +1256,7 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtWebServiceHttpPort" class="col-sm-3 control-label">Web Service HTTP Port</label>
+                                                            <label for="txtWebServiceHttpPort" class="col-sm-3 control-label">Web 管理面板 HTTP 服务端口</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtWebServiceHttpPort" placeholder="port" style="width: 100px; display: inline;">
                                                                 <span>(default 5380)</span>
@@ -1265,36 +1265,36 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label class="col-sm-3 control-label">HTTPS Options</label>
+                                                            <label class="col-sm-3 control-label">HTTPS 选项</label>
                                                             <div class="col-sm-8">
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkWebServiceEnableTls" type="checkbox"> Enable HTTPS
+                                                                        <input id="chkWebServiceEnableTls" type="checkbox"> 启用 HTTPS
                                                                     </label>
                                                                 </div>
 
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkWebServiceEnableHttp3" type="checkbox"> Enable HTTP/3
+                                                                        <input id="chkWebServiceEnableHttp3" type="checkbox"> 启用 HTTP/3
                                                                     </label>
                                                                 </div>
 
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkWebServiceHttpToTlsRedirect" type="checkbox"> Enable HTTP to HTTPS Redirection
+                                                                        <input id="chkWebServiceHttpToTlsRedirect" type="checkbox"> HTTP 重定向到 HTTPS
                                                                     </label>
                                                                 </div>
 
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkWebServiceUseSelfSignedTlsCertificate" type="checkbox"> Use A Self Signed TLS Certificate When TLS Certificate File Path Is Unspecified
+                                                                        <input id="chkWebServiceUseSelfSignedTlsCertificate" type="checkbox"> 未指定TLS证书文件路径时，使用自签名TLS证书
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtWebServiceTlsPort" class="col-sm-3 control-label">Web Service HTTPS Port</label>
+                                                            <label for="txtWebServiceTlsPort" class="col-sm-3 control-label">Web 管理面板 HTTPS 服务端口</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtWebServiceTlsPort" placeholder="port" style="width: 100px; display: inline;">
                                                                 <span>(default 53443)</span>
@@ -1303,17 +1303,17 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtWebServiceTlsCertificatePath" class="col-sm-3 control-label">TLS Certificate File Path</label>
+                                                            <label for="txtWebServiceTlsCertificatePath" class="col-sm-3 control-label">TLS 证书路径</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="txtWebServiceTlsCertificatePath" placeholder="Web Service TLS Certificate File Path On Server">
+                                                                <input type="text" class="form-control" id="txtWebServiceTlsCertificatePath" placeholder="Web 管理面板 TLS 证书文件在服务器上的路径">
                                                             </div>
                                                             <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">Specify a PKCS #12 certificate (.pfx) file path on the server. The path can be relative to the DNS server's config folder. The certificate must contain private key.</div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtWebServiceTlsCertificatePassword" class="col-sm-3 control-label">TLS Certificate Password</label>
+                                                            <label for="txtWebServiceTlsCertificatePassword" class="col-sm-3 control-label">TLS 证书密码</label>
                                                             <div class="col-sm-6">
-                                                                <input type="password" class="form-control" id="txtWebServiceTlsCertificatePassword" placeholder="Web Service TLS Certificate Password">
+                                                                <input type="password" class="form-control" id="txtWebServiceTlsCertificatePassword" placeholder="Web 管理面板 TLS证书密码">
                                                             </div>
                                                             <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">Enter the certificate (.pfx) password, if any.</div>
                                                         </div>
@@ -1333,46 +1333,46 @@
                                                 <div id="settingsTabPaneOptionalProtocols" role="tabpanel" class="tab-pane">
                                                     <div class="well well-sm form-horizontal">
                                                         <div class="form-group">
-                                                            <label class="col-sm-3 control-label">Optional DNS Server Protocols</label>
+                                                            <label class="col-sm-3 control-label">可选的DNS服务协议</label>
                                                             <div class="col-sm-8">
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkEnableDnsOverUdpProxy" type="checkbox"> Enable DNS-over-UDP-PROXY
+                                                                        <input id="chkEnableDnsOverUdpProxy" type="checkbox"> 启用 DNS-over-UDP-PROXY
                                                                     </label>
                                                                 </div>
-                                                                <div style="padding-top: 5px; padding-left: 20px;">Enable this option to accept DNS-over-UDP-PROXY requests. It implements the <a href="https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt" target="_blank">PROXY Protocol</a> for both version 1 &amp; 2 over UDP datagram and will work only on private networks.</div>
+                                                                <div style="padding-top: 5px; padding-left: 20px;">启用此选项以接受DNS-over-UDP-PROXY请求。它在UDP上实现了<a href="https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt" target="_blank">PROXY 协议</a>的1、2版本支持，并且仅在私有网络上运行</div>
 
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkEnableDnsOverTcpProxy" type="checkbox"> Enable DNS-over-TCP-PROXY
+                                                                        <input id="chkEnableDnsOverTcpProxy" type="checkbox"> 启用 DNS-over-TCP-PROXY
                                                                     </label>
                                                                 </div>
-                                                                <div style="padding-top: 5px; padding-left: 20px;">Enable this option to accept DNS-over-TCP-PROXY requests. It implements the <a href="https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt" target="_blank">PROXY Protocol</a> for both version 1 &amp; 2 over TCP connection and will work only on private networks.</div>
+                                                                <div style="padding-top: 5px; padding-left: 20px;">启用此选项以接受DNS-over-TCP-PROXY请求。它在TCP连接上实现了对<a href="https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt" target="_blank">PROXY 协议</a>版本1和2的支持，并且仅限在私有网络环境下运行。这意味着当启用该选项后，系统将能够处理在TCP的PROXY 协议版本 1 和 2 的私有网络中的 DNS 请求</div>
 
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkEnableDnsOverHttp" type="checkbox"> Enable DNS-over-HTTP
+                                                                        <input id="chkEnableDnsOverHttp" type="checkbox"> 启用 DNS-over-HTTP
                                                                     </label>
                                                                 </div>
                                                                 <div style="padding-top: 5px; padding-left: 20px;">Enable this option to accept DNS-over-HTTP requests. It must be used with a TLS terminating reverse proxy like nginx and will work only on private networks. Enabling this option also allows automatic TLS certificate renewal with HTTP challenge (webroot) for DNS-over-HTTPS service when DNS-over-HTTP port is set to 80.</div>
 
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkEnableDnsOverTls" type="checkbox"> Enable DNS-over-TLS
+                                                                        <input id="chkEnableDnsOverTls" type="checkbox"> 启用 DNS-over-TLS
                                                                     </label>
                                                                 </div>
                                                                 <div style="padding-top: 5px; padding-left: 20px;">Enable this option to accept DNS-over-TLS requests.</div>
 
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkEnableDnsOverHttps" type="checkbox"> Enable DNS-over-HTTPS
+                                                                        <input id="chkEnableDnsOverHttps" type="checkbox"> 启用 DNS-over-HTTPS
                                                                     </label>
                                                                 </div>
                                                                 <div style="padding-top: 5px; padding-left: 20px;">Enable this option to accept DNS-over-HTTPS requests.</div>
 
                                                                 <div class="checkbox">
                                                                     <label>
-                                                                        <input id="chkEnableDnsOverQuic" type="checkbox"> Enable DNS-over-QUIC
+                                                                        <input id="chkEnableDnsOverQuic" type="checkbox"> 启用 DNS-over-QUIC
                                                                     </label>
                                                                 </div>
                                                                 <div style="padding-top: 5px; padding-left: 20px;">Enable this option to accept DNS-over-QUIC requests.</div>
@@ -1380,7 +1380,7 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsOverUdpProxyPort" class="col-sm-3 control-label">DNS-over-UDP-PROXY Port</label>
+                                                            <label for="txtDnsOverUdpProxyPort" class="col-sm-3 control-label">DNS-over-UDP-PROXY 端口</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtDnsOverUdpProxyPort" placeholder="port" style="width: 100px; display: inline;">
                                                                 <span>(default 538)</span>
@@ -1389,7 +1389,7 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsOverTcpProxyPort" class="col-sm-3 control-label">DNS-over-TCP-PROXY Port</label>
+                                                            <label for="txtDnsOverTcpProxyPort" class="col-sm-3 control-label">DNS-over-TCP-PROXY 端口</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtDnsOverTcpProxyPort" placeholder="port" style="width: 100px; display: inline;">
                                                                 <span>(default 538)</span>
@@ -1398,7 +1398,7 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsOverHttpPort" class="col-sm-3 control-label">DNS-over-HTTP Port</label>
+                                                            <label for="txtDnsOverHttpPort" class="col-sm-3 control-label">DNS-over-HTTP 端口</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtDnsOverHttpPort" placeholder="port" style="width: 100px; display: inline;">
                                                                 <span>(default 80)</span>
@@ -1407,7 +1407,7 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsOverTlsPort" class="col-sm-3 control-label">DNS-over-TLS Port</label>
+                                                            <label for="txtDnsOverTlsPort" class="col-sm-3 control-label">DNS-over-TLS 端口</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtDnsOverTlsPort" placeholder="port" style="width: 100px; display: inline;">
                                                                 <span>(default 853)</span>
@@ -1416,7 +1416,7 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsOverHttpsPort" class="col-sm-3 control-label">DNS-over-HTTPS Port</label>
+                                                            <label for="txtDnsOverHttpsPort" class="col-sm-3 control-label">DNS-over-HTTPS 端口</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtDnsOverHttpsPort" placeholder="port" style="width: 100px; display: inline;">
                                                                 <span>(default 443)</span>
@@ -1425,7 +1425,7 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsOverQuicPort" class="col-sm-3 control-label">DNS-over-QUIC Port</label>
+                                                            <label for="txtDnsOverQuicPort" class="col-sm-3 control-label">DNS-over-QUIC 端口</label>
                                                             <div class="col-sm-6">
                                                                 <input type="number" class="form-control" id="txtDnsOverQuicPort" placeholder="port" style="width: 100px; display: inline;">
                                                                 <span>(default 853)</span>
@@ -1434,17 +1434,17 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsTlsCertificatePath" class="col-sm-3 control-label">TLS Certificate File Path</label>
+                                                            <label for="txtDnsTlsCertificatePath" class="col-sm-3 control-label">TLS 证书路径</label>
                                                             <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="txtDnsTlsCertificatePath" placeholder="DNS Service TLS Certificate File Path On Server">
+                                                                <input type="text" class="form-control" id="txtDnsTlsCertificatePath" placeholder="DNS 服务 TLS证书在服务器上的路径">
                                                             </div>
                                                             <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">Specify a PKCS #12 certificate (.pfx) file path on the server. The path can be relative to the DNS server's config folder. The certificate must contain private key.</div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <label for="txtDnsTlsCertificatePassword" class="col-sm-3 control-label">TLS Certificate Password</label>
+                                                            <label for="txtDnsTlsCertificatePassword" class="col-sm-3 control-label">TLS 证书密码</label>
                                                             <div class="col-sm-6">
-                                                                <input type="password" class="form-control" id="txtDnsTlsCertificatePassword" placeholder="DNS Service TLS Certificate Password">
+                                                                <input type="password" class="form-control" id="txtDnsTlsCertificatePassword" placeholder="DNS 服务 TLS 证书密码">
                                                             </div>
                                                             <div class="col-sm-offset-3 col-sm-8" style="padding-top: 5px;">Enter the certificate (.pfx) password, if any.</div>
                                                         </div>
@@ -2174,12 +2174,12 @@
 
                                             <div class="form-group" style="margin-bottom: 0px;">
                                                 <div class="pull-left">
-                                                    <button id="btnSaveDnsSettings" type="button" class="btn btn-primary" data-loading-text="Saving..." onclick="saveDnsSettings();">Save Settings</button>
-                                                    <button type="button" class="btn btn-danger" data-loading-text="Flushing..." onclick="flushDnsCache(this);" style="margin-left: 6px;">Flush Cache</button>
+                                                    <button id="btnSaveDnsSettings" type="button" class="btn btn-primary" data-loading-text="保存中..." onclick="saveDnsSettings();">保存设置</button>
+                                                    <button type="button" class="btn btn-danger" data-loading-text="刷新中..." onclick="flushDnsCache(this);" style="margin-left: 6px;">刷新缓存</button>
                                                 </div>
                                                 <div class="pull-right">
-                                                    <button type="button" class="btn btn-success" onclick="resetBackupSettingsModal();" data-toggle="modal" data-target="#modalBackupSettings">Backup Settings</button>
-                                                    <button type="button" class="btn btn-warning" onclick="resetRestoreSettingsModal();" data-toggle="modal" data-target="#modalRestoreSettings" style="margin-left: 6px;">Restore Settings</button>
+                                                    <button type="button" class="btn btn-success" onclick="resetBackupSettingsModal();" data-toggle="modal" data-target="#modalBackupSettings">备份设置</button>
+                                                    <button type="button" class="btn btn-warning" onclick="resetRestoreSettingsModal();" data-toggle="modal" data-target="#modalRestoreSettings" style="margin-left: 6px;">恢复设置</button>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -2347,7 +2347,7 @@
 
                                                     <div class="well well-sm form-horizontal">
                                                         <div class="form-group">
-                                                            <label for="txtDhcpScopeDomainName" class="col-sm-3 control-label">Domain Name</label>
+                                                            <label for="txtDhcpScopeDomainName" class="col-sm-3 control-label">域名</label>
                                                             <div class="col-sm-6">
                                                                 <input type="text" class="form-control" id="txtDhcpScopeDomainName" placeholder="Domain Name">
                                                             </div>
@@ -2612,8 +2612,8 @@
                                                     </div>
 
                                                     <div class="form-group" style="margin-bottom: 0px;">
-                                                        <button type="submit" class="btn btn-primary" style="width: 100px;" id="btnSaveDhcpScope" data-loading-text="Saving..." onclick="saveDhcpScope(); return false;">Save</button>
-                                                        <button type="button" class="btn btn-default" style="width: 100px;" onclick="refreshDhcpScopes();">Cancel</button>
+                                                        <button type="submit" class="btn btn-primary" style="width: 100px;" id="btnSaveDhcpScope" data-loading-text="Saving..." onclick="saveDhcpScope(); return false;">保存</button>
+                                                        <button type="button" class="btn btn-default" style="width: 100px;" onclick="refreshDhcpScopes();">取消</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -2677,7 +2677,7 @@
                                                         <tr>
                                                             <th><a href="#" onclick="sortTable('tbodyAdminUsers', 0); return false;">Username</a></th>
                                                             <th><a href="#" onclick="sortTable('tbodyAdminUsers', 1); return false;">Display Name</a></th>
-                                                            <th><a href="#" onclick="sortTable('tbodyAdminUsers', 2); return false;">Status</a></th>
+                                                            <th><a href="#" onclick="sortTable('tbodyAdminUsers', 2); return false;">状态</a></th>
                                                             <th><a href="#" onclick="sortTable('tbodyAdminUsers', 4); return false;">Recent Login</a></th>
                                                             <th><a href="#" onclick="sortTable('tbodyAdminUsers', 4); return false;">Previous Login</a></th>
                                                             <th style="width: 36px;"></th>
@@ -2766,7 +2766,7 @@
                                                         <div id="txtLogViewerTitle" style="float: left; padding: 4px;">20171012</div>
                                                         <div style="float: right;">
                                                             <button type="button" class="btn btn-default" data-loading-text="Download" onclick="downloadLog();" style="font-size: 12px; padding: 4px 6px;">Download</button>
-                                                            <button id="btnDeleteLog" type="button" class="btn btn-danger" data-loading-text="Delete" onclick="deleteLog();" style="font-size: 12px; padding: 4px 6px;">Delete</button>
+                                                            <button id="btnDeleteLog" type="button" class="btn btn-danger" data-loading-text="Delete" onclick="deleteLog();" style="font-size: 12px; padding: 4px 6px;">删除</button>
                                                         </div>
                                                     </div>
 
@@ -2795,12 +2795,12 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="txtQueryLogPageNumber">Page Number</label>
+                                                    <label for="txtQueryLogPageNumber">页码</label>
                                                     <input id="txtQueryLogPageNumber" type="number" class="form-control" style="width: 120px;" value="1" />
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="optQueryLogsEntriesPerPage">Logs Per Page</label>
+                                                    <label for="optQueryLogsEntriesPerPage">每页显示数量</label>
                                                     <select class="form-control" id="optQueryLogsEntriesPerPage">
                                                         <option>10</option>
                                                         <option>25</option>
@@ -2885,7 +2885,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="txtQueryLogQType">Type</label>
+                                                    <label for="txtQueryLogQType">类型</label>
                                                     <input id="txtQueryLogQType" type="text" class="form-control" />
                                                 </div>
 
@@ -2937,7 +2937,7 @@
                                                             <th>Response Type</th>
                                                             <th>RCODE</th>
                                                             <th style="min-width: 200px;">Domain</th>
-                                                            <th>Type</th>
+                                                            <th>类型</th>
                                                             <th>Class</th>
                                                             <th>Answer</th>
                                                             <th style="width: 36px;"></th>
@@ -2980,6 +2980,7 @@
                                         <img src="/img/logo.png" alt="Technitium Logo" />
                                         <h1>Technitium DNS Server</h1>
                                         <p>Version <span id="lblAboutVersion"></span></p>
+                                        <p>由<a href="https://github.com/scattered-leaves">Scattered-leaves</a>翻译</p>
                                         <p>Server up since <span id="lblAboutUptime"></span></p>
                                         <p style="max-width: 800px; margin: 0 auto 10px auto;">
                                             Copyright (C) 2024  Shreyas Zare (shreyas@technitium.com)<br />
@@ -3101,7 +3102,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveMyProfile(this); return false;">Save</button>
+                        <button type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveMyProfile(this); return false;">保存</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -3232,19 +3233,19 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Forgot Password?</h4>
+                    <h4 class="modal-title">忘记密码？</h4>
                 </div>
                 <div class="modal-body">
-                    <p>To reset your password, you need to contact the DNS server administrator.</p>
-                    <p>If you are an administrator, follow these steps to reset the 'admin' user's password:</p>
+                    <p>若要重置您的密码，您需要联系DNS服务器管理员。</p>
+                    <p>如果您是管理员，请按照以下步骤重置“admin”用户的密码：</p>
                     <ol>
-                        <li>Stop the DNS server.</li>
-                        <li>Find the DNS Server config folder and locate the <b>auth.config</b> file. The config folder will be found where the DNS Server is installed.</li>
-                        <li>Rename the <b>auth.config</b> file as <b>resetadmin.config</b></li>
-                        <li>Start the DNS Server to complete the password reset process.</li>
-                        <li>Just refresh this web page in the web browser to auto login with default credentials and quickly change the password.</li>
+                        <li>停止DNS服务器。</li>
+                        <li>找到DNS服务器配置文件夹并找到<b>auth.config</b>文件。配置文件夹将在DNS服务器安装的位置找到。</li>
+                        <li>将<b>auth.config</b>文件重命名为<b>resetadmin.config</b></li>
+                        <li>启动DNS服务器</li>
+                        <li>只需在Web浏览器中刷新此网页，即可使用默认凭据自动登录并快速更改密码。</li>
                     </ol>
-                    <p>Note: To reset 'admin' password, you will need file system access on the server running this DNS Server. If the 'admin' user does not exists then it will be created automatically.</p>
+                    <p>注意：要重置“admin”密码，您需要在运行此DNS服务器的服务器上访问文件系统。如果不存在“admin”用户，则会自动创建该用户。</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -3291,44 +3292,44 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Add Zone</h4>
+                        <h4 class="modal-title">添加区域</h4>
                     </div>
                     <div class="modal-body">
                         <div id="divAddZoneAlert"></div>
 
                         <div style="max-height: 500px; overflow-y: auto; padding: 0 6px; overflow-x: hidden;">
                             <div class="form-group">
-                                <label for="txtAddZone" class="col-sm-4 control-label">Zone</label>
+                                <label for="txtAddZone" class="col-sm-4 control-label">区域</label>
                                 <div class="col-sm-7">
-                                    <input id="txtAddZone" type="text" class="form-control" placeholder="example.com or 192.168.0.0/24 or 2001:db8::/64" maxlength="255">
+                                    <input id="txtAddZone" type="text" class="form-control" placeholder="例如：example.com 或者 192.168.0.0/24 或者 2001:db8::/64" maxlength="255">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">Type</label>
+                                <label class="col-sm-4 control-label">类型</label>
                                 <div class="col-sm-7">
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="rdAddZoneType" id="rdAddZoneTypePrimary" value="Primary" checked>
-                                            Primary Zone (default)
+                                            主要区域 (默认)
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="rdAddZoneType" id="rdAddZoneTypeSecondary" value="Secondary">
-                                            Secondary Zone
+                                            辅助区域
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="rdAddZoneType" id="rdAddZoneTypeStub" value="Stub">
-                                            Stub Zone
+                                            存根区域
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="rdAddZoneType" id="rdAddZoneTypeForwarder" value="Forwarder">
-                                            Conditional Forwarder Zone
+                                            条件转发区
                                         </label>
                                     </div>
                                 </div>
@@ -3348,7 +3349,7 @@
 
 
                             <div class="form-group" id="divAddZonePrimaryNameServerAddresses">
-                                <label for="txtAddZonePrimaryNameServerAddresses" class="col-sm-4 control-label">Primary Name Server Addresses (Optional)</label>
+                                <label for="txtAddZonePrimaryNameServerAddresses" class="col-sm-4 control-label">主要名称服务器地址（可选）</label>
                                 <div class="col-sm-7">
                                     <textarea id="txtAddZonePrimaryNameServerAddresses" class="form-control" rows="3" spellcheck="false" placeholder="192.168.1.1
 2001:db8::
@@ -3359,12 +3360,12 @@ ns1.example.com ([2001:db8::])
                             </div>
 
                             <div class="form-group" id="divAddZoneZoneTransferProtocol">
-                                <label class="col-sm-4 control-label">Zone Transfer Protocol</label>
+                                <label class="col-sm-4 control-label">区域传送协议</label>
                                 <div class="col-sm-7">
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="rdAddZoneZoneTransferProtocol" id="rdAddZoneZoneTransferProtocolTcp" value="Tcp" checked>
-                                            XFR-over-TCP (default)
+                                            XFR-over-TCP (默认)
                                         </label>
                                     </div>
                                     <div class="radio">
@@ -3384,7 +3385,7 @@ ns1.example.com ([2001:db8::])
 
 
                             <div class="form-group" id="divAddZoneTsigKeyName">
-                                <label for="optAddZoneTsigKeyName" class="col-sm-4 control-label">TSIG Key Name (Optional)</label>
+                                <label for="optAddZoneTsigKeyName" class="col-sm-4 control-label">TSIG Key 名称 （可选）</label>
                                 <div class="col-sm-7">
                                     <select id="optAddZoneTsigKeyName" class="form-control"></select>
                                 </div>
@@ -3392,12 +3393,12 @@ ns1.example.com ([2001:db8::])
 
 
                             <div class="form-group" id="divAddZoneForwarderProtocol">
-                                <label class="col-sm-4 control-label">Protocol</label>
+                                <label class="col-sm-4 control-label">协议</label>
                                 <div class="col-sm-7">
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="rdAddZoneForwarderProtocol" id="rdAddZoneForwarderProtocolUdp" value="Udp" checked>
-                                            DNS-over-UDP (default)
+                                            DNS-over-UDP (默认)
                                         </label>
                                     </div>
                                     <div class="radio">
@@ -3428,15 +3429,15 @@ ns1.example.com ([2001:db8::])
                             </div>
 
                             <div class="form-group" id="divAddZoneForwarder">
-                                <label for="txtAddZoneForwarder" class="col-sm-4 control-label">Forwarder</label>
+                                <label for="txtAddZoneForwarder" class="col-sm-4 control-label">转发器</label>
                                 <div class="col-sm-7">
                                     <div class="checkbox">
                                         <label>
-                                            <input id="chkAddZoneForwarderThisServer" type="checkbox" onclick="updateAddZoneFormForwarderThisServer();"> Use "This Server"
+                                            <input id="chkAddZoneForwarderThisServer" type="checkbox" onclick="updateAddZoneFormForwarderThisServer();"> 使用 "This Server"
                                         </label>
                                     </div>
                                     <div style="padding-top: 5px; padding-left: 20px; padding-bottom: 10px;">
-                                        When using "This Server", if a record does not exists in the zone then the request is forwarded to the DNS server's resolver internally. This allows you to override any record for the forwarded domain name or control its DNSSEC validation.
+                                        当使用“本服务器”时，如果区域内不存在记录，则请求会被内部转发到DNS服务器的解析器。这使得您可以覆盖或控制转发域名的任何记录及其DNSSEC验证
                                     </div>
 
                                     <input id="txtAddZoneForwarder" type="text" class="form-control" placeholder="8.8.8.8">
@@ -3448,7 +3449,7 @@ ns1.example.com ([2001:db8::])
                                 <div class="col-sm-7">
                                     <div class="checkbox" style="margin-bottom: 6px;">
                                         <label>
-                                            <input id="chkAddZoneForwarderDnssecValidation" type="checkbox"> Enable DNSSEC Validation
+                                            <input id="chkAddZoneForwarderDnssecValidation" type="checkbox"> 启用 DNSSEC 验证
                                         </label>
                                     </div>
                                 </div>
@@ -3456,60 +3457,60 @@ ns1.example.com ([2001:db8::])
 
                             <div id="divAddZoneForwarderProxy">
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label">Network Proxy</label>
+                                    <label class="col-sm-4 control-label">网络代理</label>
                                     <div class="col-sm-7">
                                         <div class="radio">
                                             <label>
                                                 <input type="radio" name="rdAddZoneForwarderProxyType" value="NoProxy">
-                                                No Proxy
+                                                不使用代理
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
                                                 <input type="radio" name="rdAddZoneForwarderProxyType" id="rdAddZoneForwarderProxyTypeDefaultProxy" value="DefaultProxy" checked>
-                                                Default Proxy (default)
+                                                默认代理 (默认)
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
                                                 <input type="radio" name="rdAddZoneForwarderProxyType" value="Http">
-                                                HTTP Proxy
+                                                HTTP代理
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
                                                 <input type="radio" name="rdAddZoneForwarderProxyType" value="Socks5">
-                                                SOCKS5 Proxy
+                                                SOCKS5代理
                                             </label>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="txtAddZoneForwarderProxyAddress" class="col-sm-4 control-label">Proxy Server Address</label>
+                                    <label for="txtAddZoneForwarderProxyAddress" class="col-sm-4 control-label">代理服务器地址</label>
                                     <div class="col-sm-7">
-                                        <input id="txtAddZoneForwarderProxyAddress" type="text" class="form-control" placeholder="domain name or IP address">
+                                        <input id="txtAddZoneForwarderProxyAddress" type="text" class="form-control" placeholder="域名 或者 IP地址">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="txtAddZoneForwarderProxyPort" class="col-sm-4 control-label">Proxy Server Port</label>
+                                    <label for="txtAddZoneForwarderProxyPort" class="col-sm-4 control-label">代理服务器端口</label>
                                     <div class="col-sm-7">
-                                        <input id="txtAddZoneForwarderProxyPort" type="number" class="form-control" placeholder="port" style="width: 100px;">
+                                        <input id="txtAddZoneForwarderProxyPort" type="number" class="form-control" placeholder="端口" style="width: 100px;">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="txtAddZoneForwarderProxyUsername" class="col-sm-4 control-label">Proxy Server Username</label>
+                                    <label for="txtAddZoneForwarderProxyUsername" class="col-sm-4 control-label">代理服务器用户名</label>
                                     <div class="col-sm-7">
-                                        <input id="txtAddZoneForwarderProxyUsername" type="text" class="form-control" placeholder="username">
+                                        <input id="txtAddZoneForwarderProxyUsername" type="text" class="form-control" placeholder="用户名">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="txtAddZoneForwarderProxyPassword" class="col-sm-4 control-label">Proxy Server Password</label>
+                                    <label for="txtAddZoneForwarderProxyPassword" class="col-sm-4 control-label">代理服务器密码</label>
                                     <div class="col-sm-7">
-                                        <input id="txtAddZoneForwarderProxyPassword" type="password" class="form-control" placeholder="password">
+                                        <input id="txtAddZoneForwarderProxyPassword" type="password" class="form-control" placeholder="密码">
                                     </div>
                                 </div>
                             </div>
@@ -3517,11 +3518,11 @@ ns1.example.com ([2001:db8::])
                     </div>
                     <div class="modal-footer">
                         <div class="pull-left" style="padding: 6px 0;">
-                            <a href="https://blog.technitium.com/2022/06/how-to-self-host-your-own-domain-name.html" target="_blank">Help: How To Self Host Your Own Domain Name</a>
+                            <a href="https://blog.technitium.com/2022/06/how-to-self-host-your-own-domain-name.html" target="_blank">帮助：如何自行托管自己的域名</a>
                         </div>
                         <div class="pull-right">
-                            <button id="btnAddZone" type="submit" class="btn btn-primary" data-loading-text="Adding..." onclick="addZone(); return false;">Add</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button id="btnAddZone" type="submit" class="btn btn-primary" data-loading-text="Adding..." onclick="addZone(); return false;">添加</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                         </div>
                     </div>
                 </div>
@@ -3551,7 +3552,7 @@ ns1.example.com ([2001:db8::])
                             </div>
 
                             <div class="form-group">
-                                <label for="optAddEditRecordType" class="col-sm-4 control-label">Type</label>
+                                <label for="optAddEditRecordType" class="col-sm-4 control-label">类型</label>
                                 <div class="col-sm-7">
                                     <select id="optAddEditRecordType" class="form-control" onchange="modifyAddRecordFormByType(true);" style="width: auto;">
                                         <option>A</option>
@@ -3606,13 +3607,13 @@ ns1.example.com ([2001:db8::])
                                     <div class="col-sm-offset-4 col-sm-7">
                                         <div class="checkbox">
                                             <label>
-                                                <input id="chkAddEditRecordDataPtr" type="checkbox"> <span id="chkAddEditRecordDataPtrLabel">Add reverse (PTR) record</span>
+                                                <input id="chkAddEditRecordDataPtr" type="checkbox"> <span id="chkAddEditRecordDataPtrLabel">添加反向（PTR）记录</span>
                                             </label>
                                         </div>
 
                                         <div class="checkbox">
                                             <label>
-                                                <input id="chkAddEditRecordDataCreatePtrZone" type="checkbox"> Create reverse zone for PTR record
+                                                <input id="chkAddEditRecordDataCreatePtrZone" type="checkbox"> 为PTR记录创建反向区域
                                             </label>
                                         </div>
                                     </div>
@@ -3622,7 +3623,7 @@ ns1.example.com ([2001:db8::])
 
                             <div id="divAddEditRecordDataNs" style="display: none;">
                                 <div class="form-group">
-                                    <label for="txtAddEditRecordDataNsNameServer" class="col-sm-4 control-label">Name Server</label>
+                                    <label for="txtAddEditRecordDataNsNameServer" class="col-sm-4 control-label">DNS地址</label>
                                     <div class="col-sm-7">
                                         <input id="txtAddEditRecordDataNsNameServer" type="text" class="form-control">
                                     </div>
@@ -3735,13 +3736,13 @@ ns1.example.com ([2001:db8::])
 
                             <div id="divAddEditRecordDataMx" style="display: none;">
                                 <div class="form-group">
-                                    <label for="txtAddEditRecordDataMxPreference" class="col-sm-4 control-label">Preference</label>
+                                    <label for="txtAddEditRecordDataMxPreference" class="col-sm-4 control-label">优先级</label>
                                     <div class="col-sm-7">
                                         <input id="txtAddEditRecordDataMxPreference" type="number" class="form-control" placeholder="1" style="width: 100px;">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="txtAddEditRecordDataMxExchange" class="col-sm-4 control-label">Exchange</label>
+                                    <label for="txtAddEditRecordDataMxExchange" class="col-sm-4 control-label">邮件服务器地址</label>
                                     <div class="col-sm-7">
                                         <input id="txtAddEditRecordDataMxExchange" type="text" class="form-control">
                                     </div>
@@ -3751,19 +3752,19 @@ ns1.example.com ([2001:db8::])
 
                             <div id="divAddEditRecordDataSrv" style="display: none;">
                                 <div class="form-group">
-                                    <label for="txtAddEditRecordDataSrvPriority" class="col-sm-4 control-label">Priority</label>
+                                    <label for="txtAddEditRecordDataSrvPriority" class="col-sm-4 control-label">优先级</label>
                                     <div class="col-sm-7">
                                         <input type="number" class="form-control" id="txtAddEditRecordDataSrvPriority" style="width: 100px;">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="txtAddEditRecordDataSrvWeight" class="col-sm-4 control-label">Weight</label>
+                                    <label for="txtAddEditRecordDataSrvWeight" class="col-sm-4 control-label">权重</label>
                                     <div class="col-sm-7">
                                         <input type="number" class="form-control" id="txtAddEditRecordDataSrvWeight" style="width: 100px;">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="txtAddEditRecordDataSrvPort" class="col-sm-4 control-label">Port</label>
+                                    <label for="txtAddEditRecordDataSrvPort" class="col-sm-4 control-label">端口</label>
                                     <div class="col-sm-7">
                                         <input type="number" class="form-control" id="txtAddEditRecordDataSrvPort" style="width: 100px;">
                                     </div>
@@ -4127,14 +4128,14 @@ MII...
                                 <div class="col-sm-offset-4 col-sm-7">
                                     <div class="checkbox">
                                         <label>
-                                            <input id="chkAddEditRecordOverwrite" type="checkbox"> Overwrite existing records
+                                            <input id="chkAddEditRecordOverwrite" type="checkbox"> 覆盖现有记录
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="txtAddEditRecordComments" class="col-sm-4 control-label">Comments</label>
+                                <label for="txtAddEditRecordComments" class="col-sm-4 control-label">备注</label>
                                 <div class="col-sm-7">
                                     <textarea id="txtAddEditRecordComments" class="form-control" rows="3" maxlength="255"></textarea>
                                 </div>
@@ -4143,8 +4144,8 @@ MII...
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btnAddEditRecord" data-loading-text="Saving...">Save</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="btnAddEditRecord" data-loading-text="Saving...">保存</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                     </div>
                 </div>
             </div>
@@ -4190,7 +4191,7 @@ MII...
                     <p>Warning! Overwrite SOA serial option when used to set a lower SOA serial value than the current SOA serial will cause secondary zones to fail to sync.</p>
                 </div>
                 <div class="modal-footer">
-                    <button id="btnImportZone" type="submit" class="btn btn-primary" data-loading-text="Importing..." onclick="importZone(); return false;">Import</button>
+                    <button id="btnImportZone" type="submit" class="btn btn-primary" data-loading-text="Importing..." onclick="importZone(); return false;">导入</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -4494,7 +4495,7 @@ MII...
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="btnSaveZoneOptions" type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveZoneOptions(); return false;">Save</button>
+                    <button id="btnSaveZoneOptions" type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveZoneOptions(); return false;">保存</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -4506,14 +4507,14 @@ MII...
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Sign Zone - <span id="lblDnssecSignZoneZoneName"></span></h4>
+                    <h4 class="modal-title">签名区域 - <span id="lblDnssecSignZoneZoneName"></span></h4>
                 </div>
                 <div class="modal-body">
                     <div id="divDnssecSignZoneAlert"></div>
 
                     <div class="form-horizontal" style="max-height: 500px; overflow-y: auto; padding: 0 6px; overflow-x: hidden;">
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">DNSKEY Algorithm</label>
+                            <label class="col-sm-4 control-label">DNSKEY算法</label>
                             <div class="col-sm-8">
                                 <div class="radio">
                                     <label>
@@ -4524,7 +4525,7 @@ MII...
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="rdDnssecSignZoneAlgorithm" id="rdDnssecSignZoneAlgorithmEcdsa" value="ECDSA">
-                                        ECDSA (recommended)
+                                        ECDSA (推荐)
                                     </label>
                                 </div>
                             </div>
@@ -4532,25 +4533,25 @@ MII...
 
                         <div id="divDnssecSignZoneRsaParameters">
                             <div class="form-group">
-                                <label for="optDnssecSignZoneRsaHashAlgorithm" class="col-sm-4 control-label">Hash Algorithm</label>
+                                <label for="optDnssecSignZoneRsaHashAlgorithm" class="col-sm-4 control-label">Hash算法</label>
                                 <div class="col-sm-8">
                                     <select id="optDnssecSignZoneRsaHashAlgorithm" class="form-control" style="width: auto;">
-                                        <option value="MD5">MD5 (obsolete)</option>
+                                        <option value="MD5">MD5 (已过时)</option>
                                         <option>SHA1</option>
-                                        <option value="SHA256">SHA256 (default)</option>
+                                        <option value="SHA256">SHA256 (默认)</option>
                                         <option>SHA512</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="optDnssecSignZoneRsaKSKKeySize" class="col-sm-4 control-label">Key Signing Key (KSK) Size</label>
+                                <label for="optDnssecSignZoneRsaKSKKeySize" class="col-sm-4 control-label">Key Signing Key (KSK) 大小</label>
                                 <div class="col-sm-8">
                                     <select id="optDnssecSignZoneRsaKSKKeySize" class="form-control" style="width: auto;">
                                         <option>1024</option>
                                         <option>1280</option>
                                         <option>1536</option>
-                                        <option value="2048">2048 (recommended)</option>
+                                        <option value="2048">2048 (推荐)</option>
                                         <option>3072</option>
                                         <option>4096</option>
                                     </select>
@@ -4558,11 +4559,11 @@ MII...
                             </div>
 
                             <div class="form-group">
-                                <label for="optDnssecSignZoneRsaZSKKeySize" class="col-sm-4 control-label">Zone Signing Key (ZSK) Size</label>
+                                <label for="optDnssecSignZoneRsaZSKKeySize" class="col-sm-4 control-label">Zone Signing Key (ZSK) 大小</label>
                                 <div class="col-sm-8">
                                     <select id="optDnssecSignZoneRsaZSKKeySize" class="form-control" style="width: auto;">
                                         <option>1024</option>
-                                        <option value="1280">1280 (default)</option>
+                                        <option value="1280">1280 (默认)</option>
                                         <option>1536</option>
                                         <option>2048</option>
                                         <option>3072</option>
@@ -4574,10 +4575,10 @@ MII...
 
                         <div id="divDnssecSignZoneEcdsaParameters">
                             <div class="form-group">
-                                <label for="optDnssecSignZoneEcdsaCurve" class="col-sm-4 control-label">ECDSA Curve</label>
+                                <label for="optDnssecSignZoneEcdsaCurve" class="col-sm-4 control-label">ECDSA 算法</label>
                                 <div class="col-sm-8">
                                     <select id="optDnssecSignZoneEcdsaCurve" class="form-control" style="width: auto;">
-                                        <option value="P256">P256 (default)</option>
+                                        <option value="P256">P256 (默认)</option>
                                         <option>P384</option>
                                     </select>
                                 </div>
@@ -4590,10 +4591,10 @@ MII...
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="rdDnssecSignZoneNxProof" id="rdDnssecSignZoneNxProofNSEC" value="NSEC">
-                                        Next Secure (NSEC) (recommended)
+                                        Next Secure (NSEC) (推荐)
                                     </label>
                                     <div style="padding-top: 5px; padding-left: 20px;">
-                                        With NSEC, all the records in your zone can be discovered by anyone using "zone walking" technique. NSEC is recommended if your zone does not contain any private/internal records.
+                                        使用NSEC的情况下，任何人通过“区域遍历”（zone walking）技术都可以发现你区域内所有的记录。若你的区域中不包含任何私有/内部记录，则推荐使用NSEC
                                     </div>
                                 </div>
                                 <div class="radio">
@@ -4602,7 +4603,7 @@ MII...
                                         Next Secure 3 (NSEC3)
                                     </label>
                                     <div style="padding-top: 5px; padding-left: 20px;">
-                                        NSEC3, makes it difficult to perform "zone walking" since it uses hashing with a random salt. NSEC3 should be used if your zone contains any private/internal records that you do not wish to be enumerable.
+                                        NSEC3通过采用带有随机盐值的哈希方法，使得执行“区域遍历”变得较为困难。如果你的区域中包含任何不希望被枚举的私有/内部记录，则应使用NSEC3
                                     </div>
                                 </div>
                             </div>
@@ -4610,24 +4611,24 @@ MII...
 
                         <div id="divDnssecSignZoneNSEC3Parameters">
                             <div class="form-group">
-                                <label for="txtDnssecSignZoneNSEC3Iterations" class="col-sm-4 control-label">NSEC3 Iterations</label>
+                                <label for="txtDnssecSignZoneNSEC3Iterations" class="col-sm-4 control-label">NSEC3送代次数</label>
                                 <div class="col-sm-8">
                                     <input id="txtDnssecSignZoneNSEC3Iterations" type="number" class="form-control" placeholder="iterations" style="width: 100px; display: inline;">
-                                    <span>(valid range 0-50, recommended 0)</span>
+                                    <span>(有效值为 0-50, 推荐为 0)</span>
                                 </div>
                                 <div class="col-sm-offset-4 col-sm-8" style="padding-top: 5px;">
-                                    The number of iterations used by NSEC3 for hashing the domain names. It is recommended to use 0 iterations since more iterations will increase computational costs for both the DNS server and resolver while not providing much value against "zone walking" [<a href="https://www.rfc-editor.org/rfc/rfc9276.html#name-iterations" target="_blank">RFC 9276</a>].
+                                    NSEC3在对域名进行哈希处理时所使用的迭代次数。建议使用0次迭代，因为更多的迭代次数将会增加DNS服务器和解析器双方的计算成本，而在防范“区域遍历”方面并不会带来显著的价值提升  [<a href="https://www.rfc-editor.org/rfc/rfc9276.html#name-iterations" target="_blank">RFC 9276</a>].
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="txtDnssecSignZoneNSEC3SaltLength" class="col-sm-4 control-label">NSEC3 Salt Length</label>
+                                <label for="txtDnssecSignZoneNSEC3SaltLength" class="col-sm-4 control-label">NSEC3盐长度</label>
                                 <div class="col-sm-8">
                                     <input id="txtDnssecSignZoneNSEC3SaltLength" type="number" class="form-control" placeholder="length" style="width: 100px; display: inline;">
-                                    <span>bytes (valid range 0-32, recommended 0)</span>
+                                    <span>字节 (有效值为 0-32, 推荐为 0)</span>
                                 </div>
                                 <div class="col-sm-offset-4 col-sm-8" style="padding-top: 5px;">
-                                    The number of bytes of random salt to generate to be used with the NSEC3 hash computation. It is recommended to not use salt by setting the length to 0 [<a href="https://www.rfc-editor.org/rfc/rfc9276.html#name-salt" target="_blank">RFC 9276</a>].
+                                    生成用于与NSEC3哈希计算结合使用的随机盐值的字节数。建议通过设置长度为0来不使用盐值。这意味着在NSEC3哈希计算过程中不引入额外的随机数据，以简化配置并减少计算开销。不过请注意，如果要增强安全性防止“区域遍历”，通常会建议使用非零长度的盐值。但在某些情况下，如上文所述，为了平衡性能和隐私保护程度，可能也会推荐不使用盐值  [<a href="https://www.rfc-editor.org/rfc/rfc9276.html#name-salt" target="_blank">RFC 9276</a>].
                                 </div>
                             </div>
                         </div>
@@ -4636,32 +4637,33 @@ MII...
                             <label for="txtDnssecSignZoneDnsKeyTtl" class="col-sm-4 control-label">DNSKEY TTL</label>
                             <div class="col-sm-8">
                                 <input id="txtDnssecSignZoneDnsKeyTtl" type="number" class="form-control" placeholder="ttl" style="width: 100px; display: inline;">
-                                <span>seconds (default 3600)</span>
+                                <span>秒 (默认为 3600)</span>
                             </div>
                             <div class="col-sm-offset-4 col-sm-8" style="padding-top: 5px;">
-                                The TTL value to be used for DNSKEY records. A lower value will allow quicker addition or rollover to a new DNS Key at the cost of increased frequency of DNSKEY queries by resolvers.
+                                DNSKEY记录所使用的TTL（Time To Live）值。设置较低的TTL值将允许更快地添加或切换到新的DNS密钥，代价是会增加解析器发起DNSKEY查询的频率。
+                                TTL值决定了DNS缓存中DNSKEY记录的有效期。当TTL值较低时，DNS记录在各DNS服务器上的缓存会更快过期，这意味着当DNS密钥发生变化时，这些变化能更迅速地传播到互联网上的各个解析器。然而，频繁的过期会导致解析器必须更频繁地从权威DNS服务器获取更新的DNSKEY记录，这可能会增加网络流量和DNS服务器负载。在需要快速响应密钥更改或提高DNS安全策略灵活性的情况下，可以考虑适当降低DNSKEY记录的TTL值
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="txtDnssecSignZoneZskAutoRollover" class="col-sm-4 control-label">ZSK Automatic Rollover</label>
+                            <label for="txtDnssecSignZoneZskAutoRollover" class="col-sm-4 control-label">ZSK自动更新</label>
                             <div class="col-sm-8">
                                 <input id="txtDnssecSignZoneZskAutoRollover" type="number" class="form-control" placeholder="days" style="width: 100px; display: inline;">
-                                <span>days (valid range 0-365; default 30; set 0 to disable)</span>
+                                <span>天 (有效值为 0-365; 默认 30; 0 为禁用)</span>
                             </div>
                             <div class="col-sm-offset-4 col-sm-8" style="padding-top: 5px;">
-                                The frequency at which the DNS server must automatically rollover all Zone Signing Key (ZSK) keys.
+                                自动更新ZSK密钥是为了维持DNSSEC的安全性，通过定期更换密钥来降低由于密钥长时间使用可能导致的安全风险。更新频率可以根据安全需求和运营策略进行设置
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="pull-left" style="padding: 6px 0;">
-                        <a href="https://blog.technitium.com/2022/07/how-to-secure-your-domain-name-with-.html" target="_blank">Help: How To Secure Your Domain Name With DNSSEC</a>
+                        <a href="https://blog.technitium.com/2022/07/how-to-secure-your-domain-name-with-.html" target="_blank">帮助：如何使用DNSSEC保护您的域名安全（英语）</a>
                     </div>
                     <div class="pull-right">
-                        <button id="btnDnssecSignZone" type="submit" class="btn btn-primary" data-loading-text="Signing..." onclick="signPrimaryZone(); return false;">Sign Zone</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id="btnDnssecSignZone" type="submit" class="btn btn-primary" data-loading-text="Signing..." onclick="signPrimaryZone(); return false;">签名区域</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     </div>
                 </div>
             </div>
@@ -4711,18 +4713,18 @@ MII...
 
                     <div id="divDnssecViewDs" style="max-height: 500px; overflow-y: auto; padding: 0 6px; overflow-x: hidden;">
                         <p>
-                            Use the DNS Key data given below to add DS records for your zone. Before adding the DS records, you must read and understand the following points:
+                            使用以下给出的DNS密钥数据为您的区域添加DS记录。在添加DS记录之前，您必须阅读并理解以下要点：
                             <ul>
-                                <li>The Key State for a newly published DNS Key must be <code>Ready</code> before you can add a DS record for it. Adding DS record for a DNS Key with <code>Published</code> Key State may cause DNSSEC validation to fail for some DNS resolvers. A "ready by" timestamp is displayed to let you know when a DS record can be added for a DNS Key that is not "Ready" yet.</li>
-                                <li>You should add only one DS record for each Key Tag. That is, do not create multiple DS records for each Digest Type, instead use the Digest Type that is supported by your Domain Registrar.</li>
-                                <li>Use the provided Public Key if the Domain Registrar requires it instead of the Digest.</li>
+                                <li>对于新发布的DNS密钥，其密钥状态必须变为 <code>Ready</code> 之后才能为其添加DS记录。若为处于 <code>Published</code> 状态的DNS密钥添加DS记录，可能导致某些DNS解析器上的DNSSEC验证失败。在“DNSSEC属性”页面，系统会显示一个“准备就绪的时间”，以便让您知道何时可以为尚未达到“就绪”状态的DNSSEC密钥添加DS记录</li>
+                                <li>针对每个密钥标签（Key Tag），您应当只添加一条DS记录。也就是说，不要为每种摘要类型（Digest Type）都创建多条DS记录，而应选择使用您的域名注册商所支持的那种摘要类型来创建唯一的DS记录</li>
+                                <li>如果域名注册商要求使用公钥而非摘要，则请使用提供的公钥</li>
                             </ul>
                         </p>
 
                         <table class="table well well-sm">
                             <thead>
                                 <tr>
-                                    <th><a>Key Tag</a></th>
+                                    <th><a>Key 标签</a></th>
                                     <th><a>Key State</a></th>
                                     <th><a>Algorithm</a></th>
                                     <th><a>Digest Type</a></th>
@@ -4746,7 +4748,7 @@ MII...
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">DNSSEC Properties - <span id="lblDnssecPropertiesZoneName"></span></h4>
+                    <h4 class="modal-title">DNSSEC 属性 - <span id="lblDnssecPropertiesZoneName"></span></h4>
                 </div>
                 <div class="modal-body">
                     <div id="divDnssecPropertiesAlert"></div>
@@ -4758,12 +4760,12 @@ MII...
                             <table class="table table-hover" style="margin-bottom: 10px;">
                                 <thead>
                                     <tr>
-                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 0); return false;">Key Tag</a></th>
-                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 1); return false;">Key Type</a></th>
-                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 2); return false;">Algorithm</a></th>
-                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 3); return false;">State</a></th>
-                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 4); return false;">State Changed</a></th>
-                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 5); return false;">Rollover (days)</a></th>
+                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 0); return false;">密钥标签</a></th>
+                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 1); return false;">密钥类型</a></th>
+                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 2); return false;">算法</a></th>
+                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 3); return false;">状态</a></th>
+                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 4); return false;">状态更新时间</a></th>
+                                        <th><a href="#" onclick="sortTable('tableDnssecPropertiesPrivateKeysBody', 5); return false;">更新周期 (天)</a></th>
                                         <th style="width: 36px;"></th>
                                     </tr>
                                 </thead>
@@ -4772,8 +4774,8 @@ MII...
                             </table>
 
                             <div>
-                                <button type="button" class="btn btn-primary" style="padding: 2px 0; width: 120px;" data-toggle="collapse" data-target="#divDnssecPropertiesGenerateKey" aria-expanded="false" aria-controls="divDnssecPropertiesGenerateKey">Add Private Key</button>
-                                <button id="btnDnssecPropertiesPublishKeys" type="button" class="btn btn-warning" style="padding: 2px 0; width: 120px;" data-loading-text="Publishing..." onclick="publishAllDnssecPrivateKeys(this);">Publish All Keys</button>
+                                <button type="button" class="btn btn-primary" style="padding: 2px 0; width: 120px;" data-toggle="collapse" data-target="#divDnssecPropertiesGenerateKey" aria-expanded="false" aria-controls="divDnssecPropertiesGenerateKey">添加私钥</button>
+                                <button id="btnDnssecPropertiesPublishKeys" type="button" class="btn btn-warning" style="padding: 2px 0; width: 120px;" data-loading-text="Publishing..." onclick="publishAllDnssecPrivateKeys(this);">发布所有密钥</button>
                             </div>
 
                             <div id="divDnssecPropertiesGenerateKey" class="collapse">
@@ -4793,7 +4795,7 @@ MII...
                                         <div class="col-sm-8">
                                             <select id="optDnssecPropertiesGenerateKeyAlgorithm" class="form-control" style="width: auto;">
                                                 <option>RSA</option>
-                                                <option value="ECDSA">ECDSA (recommended)</option>
+                                                <option value="ECDSA">ECDSA (推荐)</option>
                                             </select>
                                         </div>
                                     </div>
@@ -4803,16 +4805,16 @@ MII...
                                             <label for="optDnssecPropertiesGenerateKeyRsaHashAlgorithm" class="col-sm-4 control-label">Hash Algorithm</label>
                                             <div class="col-sm-8">
                                                 <select id="optDnssecPropertiesGenerateKeyRsaHashAlgorithm" class="form-control" style="width: auto;">
-                                                    <option value="MD5">MD5 (obsolete)</option>
+                                                    <option value="MD5">MD5 (已过时)</option>
                                                     <option>SHA1</option>
-                                                    <option value="SHA256">SHA256 (default)</option>
+                                                    <option value="SHA256">SHA256 (默认)</option>
                                                     <option>SHA512</option>
                                                 </select>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="optDnssecPropertiesGenerateKeyRsaKeySize" class="col-sm-4 control-label">Key Size</label>
+                                            <label for="optDnssecPropertiesGenerateKeyRsaKeySize" class="col-sm-4 control-label">Key 大小</label>
                                             <div class="col-sm-8">
                                                 <select id="optDnssecPropertiesGenerateKeyRsaKeySize" class="form-control" style="width: auto;">
                                                     <option>1024</option>
@@ -4828,10 +4830,10 @@ MII...
 
                                     <div id="divDnssecPropertiesGenerateKeyEcdsaParameters">
                                         <div class="form-group">
-                                            <label for="optDnssecPropertiesGenerateKeyEcdsaCurve" class="col-sm-4 control-label">ECDSA Curve</label>
+                                            <label for="optDnssecPropertiesGenerateKeyEcdsaCurve" class="col-sm-4 control-label">ECDSA 算法</label>
                                             <div class="col-sm-8">
                                                 <select id="optDnssecPropertiesGenerateKeyEcdsaCurve" class="form-control" style="width: auto;">
-                                                    <option value="P256">P256 (default)</option>
+                                                    <option value="P256">P256 (默认)</option>
                                                     <option>P384</option>
                                                 </select>
                                             </div>
@@ -4839,21 +4841,21 @@ MII...
                                     </div>
 
                                     <div id="divDnssecPropertiesGenerateKeyAutomaticRollover" class="form-group">
-                                        <label for="txtDnssecPropertiesGenerateKeyAutomaticRollover" class="col-sm-4 control-label">Automatic Key Rollover</label>
+                                        <label for="txtDnssecPropertiesGenerateKeyAutomaticRollover" class="col-sm-4 control-label">密钥自动更新</label>
                                         <div class="col-sm-8">
                                             <div>
                                                 <input id="txtDnssecPropertiesGenerateKeyAutomaticRollover" type="number" class="form-control" placeholder="days" style="width: 100px; display: inline;">
-                                                <span>days (valid range 0-365; default 30; set 0 to disable)</span>
+                                                <span>天 (有效值 0-365; 默认 30; 0 为禁用)</span>
                                             </div>
                                         </div>
                                         <div class="col-sm-offset-4 col-sm-8" style="margin-top: 10px;">
-                                            The frequency at which the DNS server must automatically rollover the key.
+                                            DNS服务器必须自动更换密钥的频率
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-sm-offset-4 col-sm-8">
-                                            <button type="button" class="btn btn-primary" style="padding: 2px 0; width: 150px;" data-loading-text="Generating..." onclick="generateAndAddDnssecPrivateKey(this);">Generate & Add Key</button>
+                                            <button type="button" class="btn btn-primary" style="padding: 2px 0; width: 150px;" data-loading-text="Generating..." onclick="generateAndAddDnssecPrivateKey(this);">生成并添加密钥</button>
                                         </div>
                                     </div>
                                 </div>
@@ -4867,10 +4869,10 @@ MII...
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="rdDnssecPropertiesNxProof" id="rdDnssecPropertiesNxProofNSEC" value="NSEC">
-                                            Next Secure (NSEC) (recommended)
+                                            Next Secure (NSEC) (推荐)
                                         </label>
                                         <div style="padding-top: 5px; padding-left: 20px;">
-                                            With NSEC, all the records in your zone can be discovered by anyone using "zone walking" technique. NSEC is recommended if your zone does not contain any private/internal records.
+                                            使用NSEC的情况下，任何人通过“区域遍历”（zone walking）技术都可以发现你区域内所有的记录。若你的区域中不包含任何私有/内部记录，则推荐使用NSEC
                                         </div>
                                     </div>
                                     <div class="radio">
@@ -4879,7 +4881,7 @@ MII...
                                             Next Secure 3 (NSEC3)
                                         </label>
                                         <div style="padding-top: 5px; padding-left: 20px;">
-                                            NSEC3, makes it difficult to perform "zone walking" since it uses hashing with a random salt. NSEC3 should be used if your zone contains any private/internal records that you do not wish to be enumerable.
+                                            NSEC3通过采用带有随机盐值的哈希方法，使得执行“区域遍历”变得较为困难。如果你的区域中包含任何不希望被枚举的私有/内部记录，则应使用NSEC3
                                         </div>
                                     </div>
                                 </div>
@@ -4887,24 +4889,24 @@ MII...
 
                             <div id="divDnssecPropertiesNSEC3Parameters">
                                 <div class="form-group">
-                                    <label for="txtDnssecPropertiesNSEC3Iterations" class="col-sm-4 control-label">NSEC3 Iterations</label>
+                                    <label for="txtDnssecPropertiesNSEC3Iterations" class="col-sm-4 control-label">NSEC3送代</label>
                                     <div class="col-sm-8">
                                         <input id="txtDnssecPropertiesNSEC3Iterations" type="number" class="form-control" placeholder="iterations" style="width: 100px; display: inline;">
-                                        <span>(valid range 0-50, recommended 0)</span>
+                                        <span>(有效值 0-50, 推荐为0)</span>
                                     </div>
                                     <div class="col-sm-offset-4 col-sm-8" style="padding-top: 5px;">
-                                        The number of iterations used by NSEC3 for hashing the domain names. It is recommended to use 0 iterations since more iterations will increase computational costs for both the DNS server and resolver while not providing much value against "zone walking" [<a href="https://www.rfc-editor.org/rfc/rfc9276.html#name-iterations" target="_blank">RFC 9276</a>].
+                                        NSEC3用于对域名进行哈希时所使用的迭代次数。建议使用0次迭代，因为增加迭代次数会增加DNS服务器和解析器的计算成本，但在防范“区域遍历”方面并不会带来太多额外价值 [<a href="https://www.rfc-editor.org/rfc/rfc9276.html#name-iterations" target="_blank">RFC 9276</a>]
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="txtDnssecPropertiesNSEC3SaltLength" class="col-sm-4 control-label">NSEC3 Salt Length</label>
+                                    <label for="txtDnssecPropertiesNSEC3SaltLength" class="col-sm-4 control-label">NSEC3哈希盐长度</label>
                                     <div class="col-sm-8">
                                         <input id="txtDnssecPropertiesNSEC3SaltLength" type="number" class="form-control" placeholder="length" style="width: 100px; display: inline;">
-                                        <span>bytes (valid range 0-32, recommended 0)</span>
+                                        <span>字节 (有效值 0-32, 推荐 0)</span>
                                     </div>
                                     <div class="col-sm-offset-4 col-sm-8" style="padding-top: 5px;">
-                                        The number of bytes of random salt to generate to be used with the NSEC3 hash computation. It is recommended to not use salt by setting the length to 0 [<a href="https://www.rfc-editor.org/rfc/rfc9276.html#name-salt" target="_blank">RFC 9276</a>].
+                                        生成用于NSEC3哈希计算的随机盐的字节数量。建议通过设置长度为0来不使用盐 [<a href="https://www.rfc-editor.org/rfc/rfc9276.html#name-salt" target="_blank">RFC 9276</a>]
                                     </div>
                                 </div>
                             </div>
@@ -4922,18 +4924,18 @@ MII...
                                 <div class="col-sm-8">
                                     <div>
                                         <input id="txtDnssecPropertiesDnsKeyTtl" type="number" class="form-control" placeholder="ttl" style="width: 100px; display: inline;">
-                                        <span>seconds (default 3600)</span>
+                                        <span>秒 (默认 3600)</span>
                                     </div>
                                     <div style="margin-top: 10px;">
-                                        <button type="button" class="btn btn-default" style="padding: 2px 0; width: 100px;" data-loading-text="Updating..." onclick="updateDnssecDnsKeyTtl(this);">Update TTL</button>
+                                        <button type="button" class="btn btn-default" style="padding: 2px 0; width: 100px;" data-loading-text="Updating..." onclick="updateDnssecDnsKeyTtl(this);">更新TTL</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-offset-4 col-sm-8" style="margin-top: 10px;">
-                                    The TTL value to be used for DNSKEY records. A lower value will allow quicker addition or rollover to a new DNS Key at the cost of increased frequency of DNSKEY queries by resolvers.
+                                    DNSKEY记录所使用的TTL值。设置更低的值将会加快添加或滚动到新DNS密钥的速度，但代价是提高解析器对DNSKEY查询的频率
                                 </div>
                             </div>
                             <div style="margin-top: 10px;">
-                                Warning! You MUST wait for at least the number of seconds specified by the the old TTL value to elapse before making any changes to the DNS keys above to ensure that all recursive resolvers would have expired the DNSKEY records from its cache. For example, if the old TTL value was 3600, then you must wait for 3600 seconds (1 hour) to pass before making any changes to the DNS keys.
+                                警告！在对上述DNS密钥进行任何更改之前，您必须等待至少等于旧TTL值指定的秒数，以确保所有递归解析器都已经从其缓存中过期了DNSKEY记录。例如，如果旧的TTL值为3600，则您必须等待3600秒（即1小时）后才能对DNS密钥进行任何更改
                             </div>
                         </div>
                     </div>
@@ -4964,7 +4966,7 @@ MII...
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="btnImportAllowedZones" type="submit" class="btn btn-primary" data-loading-text="Importing..." onclick="importAllowedZones(); return false;">Import</button>
+                    <button id="btnImportAllowedZones" type="submit" class="btn btn-primary" data-loading-text="Importing..." onclick="importAllowedZones(); return false;">导入</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -4989,7 +4991,7 @@ MII...
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="btnImportBlockedZones" type="submit" class="btn btn-primary" data-loading-text="Importing..." onclick="importBlockedZones(); return false;">Import</button>
+                    <button id="btnImportBlockedZones" type="submit" class="btn btn-primary" data-loading-text="Importing..." onclick="importBlockedZones(); return false;">导入</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -5124,7 +5126,7 @@ MII...
                     <p>Note: The app will reload the config automatically after you save it.</p>
                 </div>
                 <div class="modal-footer">
-                    <button id="btnAppConfig" type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveAppConfig(); return false;">Save</button>
+                    <button id="btnAppConfig" type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveAppConfig(); return false;">保存</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -5572,7 +5574,7 @@ MII...
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button id="btnUserDetailsSave" type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveUserDetails(this); return false;">Save</button>
+                        <button id="btnUserDetailsSave" type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveUserDetails(this); return false;">保存</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -5653,7 +5655,7 @@ MII...
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button id="btnGroupDetailsSave" type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveGroupDetails(this); return false;">Save</button>
+                        <button id="btnGroupDetailsSave" type="submit" class="btn btn-primary" data-loading-text="Saving..." onclick="saveGroupDetails(this); return false;">保存</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -5667,7 +5669,7 @@ MII...
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Edit Permissions - <span id="lblEditPermissionsName"></span></h4>
+                        <h4 class="modal-title">编辑权限 - <span id="lblEditPermissionsName"></span></h4>
                     </div>
                     <div class="modal-body">
                         <div id="divEditPermissionsAlert"></div>
@@ -5685,7 +5687,7 @@ MII...
                                                     <th><a href="#" onclick="sortTable('tbodyEditPermissionsUser', 0); return false;">Username</a></th>
                                                     <th><a href="#" onclick="sortTable('tbodyEditPermissionsUser', 0); return false;" style="width: 65px;">View</a></th>
                                                     <th><a href="#" onclick="sortTable('tbodyEditPermissionsUser', 0); return false;" style="width: 65px;">Modify</a></th>
-                                                    <th><a href="#" onclick="sortTable('tbodyEditPermissionsUser', 0); return false;" style="width: 65px;">Delete</a></th>
+                                                    <th><a href="#" onclick="sortTable('tbodyEditPermissionsUser', 0); return false;" style="width: 65px;">删除</a></th>
                                                     <th style="width: 76px;"></th>
                                                 </tr>
                                             </thead>
@@ -5707,7 +5709,7 @@ MII...
                                                     <th><a href="#" onclick="sortTable('tbodyEditPermissionsGroup', 0); return false;">Group</a></th>
                                                     <th><a href="#" onclick="sortTable('tbodyEditPermissionsGroup', 0); return false;" style="width: 65px;">View</a></th>
                                                     <th><a href="#" onclick="sortTable('tbodyEditPermissionsGroup', 0); return false;" style="width: 65px;">Modify</a></th>
-                                                    <th><a href="#" onclick="sortTable('tbodyEditPermissionsGroup', 0); return false;" style="width: 65px;">Delete</a></th>
+                                                    <th><a href="#" onclick="sortTable('tbodyEditPermissionsGroup', 0); return false;" style="width: 65px;">删除</a></th>
                                                     <th style="width: 76px;"></th>
                                                 </tr>
                                             </thead>
@@ -5721,7 +5723,7 @@ MII...
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button id="btnEditPermissionsSave" type="submit" class="btn btn-primary" data-loading-text="Saving...">Save</button>
+                        <button id="btnEditPermissionsSave" type="submit" class="btn btn-primary" data-loading-text="Saving...">保存</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>

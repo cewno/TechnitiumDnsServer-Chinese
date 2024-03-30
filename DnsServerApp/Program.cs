@@ -66,12 +66,12 @@ namespace DnsServerApp
                     exitHandle.WaitOne();
                 };
 
-                Console.WriteLine("Technitium DNS Server was started successfully.");
-                Console.WriteLine("Using config folder: " + service.ConfigFolder);
+                Console.WriteLine("Technitium DNS Server Chinese version 已成功启动");
+                Console.WriteLine("使用的配置文件夹: " + service.ConfigFolder);
                 Console.WriteLine("");
-                Console.WriteLine("Note: Open http://" + Environment.MachineName.ToLowerInvariant() + ":" + service.WebServiceHttpPort + "/ in web browser to access web console.");
+                Console.WriteLine("注意: 打开 http://" + Environment.MachineName.ToLowerInvariant() + ":" + service.WebServiceHttpPort + "/ 即可访问Web控制台");
                 Console.WriteLine("");
-                Console.WriteLine("Press [CTRL + C] to stop...");
+                Console.WriteLine("请通过 [CTRL + C] 关闭");
 
                 waitHandle.WaitOne();
             }
@@ -82,12 +82,12 @@ namespace DnsServerApp
             finally
             {
                 Console.WriteLine("");
-                Console.WriteLine("Technitium DNS Server is stopping...");
+                Console.WriteLine("Technitium DNS Server 正在关闭中");
 
                 if (service != null)
                     service.Dispose();
 
-                Console.WriteLine("Technitium DNS Server was stopped successfully.");
+                Console.WriteLine("Technitium DNS Server 已关闭");
                 exitHandle.Set();
             }
         }

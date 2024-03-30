@@ -2078,21 +2078,21 @@ function refreshDashboard(hideLoader) {
         success: function (responseJSON) {
 
             //stats
-            $("#divDashboardStatsTotalQueries").text(responseJSON.response.stats.totalQueries.toLocaleString());
-            $("#divDashboardStatsTotalNoError").text(responseJSON.response.stats.totalNoError.toLocaleString());
-            $("#divDashboardStatsTotalServerFailure").text(responseJSON.response.stats.totalServerFailure.toLocaleString());
-            $("#divDashboardStatsTotalNxDomain").text(responseJSON.response.stats.totalNxDomain.toLocaleString());
-            $("#divDashboardStatsTotalRefused").text(responseJSON.response.stats.totalRefused.toLocaleString());
+            $("#divDashboardStatsTotalQueries").text(responseJSON.response.stats.totalQueries.toLocaleString() + " 次");
+            $("#divDashboardStatsTotalNoError").text(responseJSON.response.stats.totalNoError.toLocaleString() + " 次");
+            $("#divDashboardStatsTotalServerFailure").text(responseJSON.response.stats.totalServerFailure.toLocaleString() + " 次");
+            $("#divDashboardStatsTotalNxDomain").text(responseJSON.response.stats.totalNxDomain.toLocaleString() + " 次");
+            $("#divDashboardStatsTotalRefused").text(responseJSON.response.stats.totalRefused.toLocaleString() + " 次");
 
-            $("#divDashboardStatsTotalAuthHit").text(responseJSON.response.stats.totalAuthoritative.toLocaleString());
-            $("#divDashboardStatsTotalRecursions").text(responseJSON.response.stats.totalRecursive.toLocaleString());
-            $("#divDashboardStatsTotalCacheHit").text(responseJSON.response.stats.totalCached.toLocaleString());
-            $("#divDashboardStatsTotalBlocked").text(responseJSON.response.stats.totalBlocked.toLocaleString());
-            $("#divDashboardStatsTotalDropped").text(responseJSON.response.stats.totalDropped.toLocaleString());
+            $("#divDashboardStatsTotalAuthHit").text(responseJSON.response.stats.totalAuthoritative.toLocaleString() + " 次");
+            $("#divDashboardStatsTotalRecursions").text(responseJSON.response.stats.totalRecursive.toLocaleString() + " 次");
+            $("#divDashboardStatsTotalCacheHit").text(responseJSON.response.stats.totalCached.toLocaleString() + " 次");
+            $("#divDashboardStatsTotalBlocked").text(responseJSON.response.stats.totalBlocked.toLocaleString() + " 次");
+            $("#divDashboardStatsTotalDropped").text(responseJSON.response.stats.totalDropped.toLocaleString() + " 次");
 
-            $("#divDashboardStatsTotalClients").text(responseJSON.response.stats.totalClients.toLocaleString());
+            $("#divDashboardStatsTotalClients").text(responseJSON.response.stats.totalClients.toLocaleString() + " 个");
 
-            $("#divDashboardStatsZones").text(responseJSON.response.stats.zones.toLocaleString());
+            $("#divDashboardStatsZones").text(responseJSON.response.stats.zones.toLocaleString() + " 个");
             $("#divDashboardStatsCachedEntries").text(responseJSON.response.stats.cachedEntries.toLocaleString());
             $("#divDashboardStatsAllowedZones").text(responseJSON.response.stats.allowedZones.toLocaleString());
             $("#divDashboardStatsBlockedZones").text(responseJSON.response.stats.blockedZones.toLocaleString());

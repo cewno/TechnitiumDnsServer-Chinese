@@ -1,9 +1,9 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
-LABEL product="Technitium DNS Server"
-LABEL vendor="Technitium"
-LABEL email="support@technitium.com"
-LABEL project_url="https://technitium.com/dns/"
-LABEL github_url="https://github.com/TechnitiumSoftware/DnsServer"
+LABEL product="Technitium DNS Server Chinese version"
+LABEL vendor="Scattered-leaves"
+LABEL email="xiaomoshuiya@qq.com"
+LABEL project_url="https://github.com/scattered-leaves/TechnitiumDnsServer-Chinese"
+LABEL github_url="https://github.com/scattered-leaves/TechnitiumDnsServer-Chinese"
 
 WORKDIR /opt/technitium/dns/
 

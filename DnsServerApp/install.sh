@@ -1,6 +1,7 @@
 #!/bin/sh
 
 dotnetDir="/opt/dotnet"
+versions="12.1-zh0.1"
 
 if [ -d "/etc/dns/config" ]
 then
@@ -10,16 +11,16 @@ else
 fi
 
 dnsTar="$dnsDir/DnsServerPortable.tar.gz"
-dnsUrl="https://download.technitium.com/dns/DnsServerPortable.tar.gz"
+dnsUrl="https://gitee.com/Scattered_leaves/TechnitiumDnsServer-Chinese/releases/$versions/DnsServerPortable.tar.gz"
 
 mkdir -p $dnsDir
 installLog="$dnsDir/install.log"
 echo "" > $installLog
 
 echo ""
-echo "==============================="
-echo "Technitium DNS Server Installer"
-echo "==============================="
+echo "============================="
+echo "Technitium DNS Server 安装脚本"
+echo "============================="
 
 if dotnet --list-runtimes 2> /dev/null | grep -q "Microsoft.AspNetCore.App 8.0."; 
 then
@@ -31,17 +32,17 @@ fi
 if [ ! -d $dotnetDir ] && [ "$dotnetFound" = "yes" ]
 then
 	echo ""
-	echo "ASP.NET Core Runtime is already installed."
+	echo "ASP.NET Core 运行时已安装"
 else
 	echo ""
 
 	if [ -d $dotnetDir ] && [ "$dotnetFound" = "yes" ]
 	then
 		dotnetUpdate="yes"
-		echo "Updating ASP.NET Core Runtime..."
+		echo "正在更新 ASP.NET Core 运行时..."
 	else
 		dotnetUpdate="no"
-		echo "Installing ASP.NET Core Runtime..."
+		echo "正在安装 ASP.NET Core 运行时..."
 	fi
 
 	curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin -c 8.0 --runtime aspnetcore --no-path --install-dir $dotnetDir --verbose >> $installLog 2>&1
@@ -55,26 +56,26 @@ else
 	then
 		if [ "$dotnetUpdate" = "yes" ]
 		then
-			echo "ASP.NET Core Runtime was updated successfully!"
+			echo "ASP.NET Core 运行时 更新成功!"
 		else
-			echo "ASP.NET Core Runtime was installed successfully!"
+			echo "ASP.NET Core 运行时 安装成功!"
 		fi
 	else
-		echo "Failed to install ASP.NET Core Runtime. Please try again."
+		echo "安装 ASP.NET Core 运行时 失败. 请重试"
 		exit 1
 	fi
 fi
 
 echo ""
-echo "Downloading Technitium DNS Server..."
+echo "下载 Technitium DNS Server中..."
 
 if curl -o $dnsTar --fail $dnsUrl >> $installLog 2>&1
 then
 	if [ -d $dnsDir ]
 	then
-		echo "Updating Technitium DNS Server..."
+		echo "更新 Technitium DNS Server..."
 	else
-		echo "Installing Technitium DNS Server..."
+		echo "安装 Technitium DNS Server..."
 	fi
 	
 	tar -zxf $dnsTar -C $dnsDir >> $installLog 2>&1
@@ -83,10 +84,10 @@ then
 	then
 		if [ -f "/etc/systemd/system/dns.service" ]
 		then
-			echo "Restarting systemd service..."
+			echo "重启systemd服务…"
 			systemctl restart dns.service >> $installLog 2>&1
 		else
-			echo "Configuring systemd service..."
+			echo "配置systemd服务…"
 			cp $dnsDir/systemd.service /etc/systemd/system/dns.service
 			systemctl enable dns.service >> $installLog 2>&1
 			
@@ -106,18 +107,18 @@ then
 		fi
 	
 		echo ""
-		echo "Technitium DNS Server was installed successfully!"
-		echo "Open http://$(hostname):5380/ to access the web console."
+		echo "Technitium DNS Server 安装成功!"
+		echo "打开 http://$(hostname):5380/ 就可以访问Web控制面板."
 		echo ""
 		echo "Donate! Make a contribution by becoming a Patron: https://www.patreon.com/technitium"
 		echo ""
 	else
 		echo ""
-		echo "Failed to install Technitium DNS Server: systemd was not detected."
+		echo "安装 Technitium DNS Server 失败: 未检测到systemd服务"
 		exit 1
 	fi
 else
 	echo ""
-	echo "Failed to download Technitium DNS Server from: $dnsUrl"
+	echo "从 $dnsUrl 下载 Technitium DNS Server 失败"
 	exit 1
 fi

@@ -505,7 +505,7 @@ function refreshZones(checkDisplay, pageNumber) {
             var statusHtml;
 
             if (responseJSON.response.zones.length > 0)
-                statusHtml = firstRowNumber + "-" + lastRowNumber + " (" + responseJSON.response.zones.length + ") of " + responseJSON.response.totalZones + " zones (page " + responseJSON.response.pageNumber + " of " + responseJSON.response.totalPages + ")";
+                statusHtml = firstRowNumber + "-" + lastRowNumber + " (" + responseJSON.response.zones.length + ") 共 " + responseJSON.response.totalZones + " 个区域 (当前在 " + responseJSON.response.pageNumber + " 页 共 " + responseJSON.response.totalPages + " 页)";
             else
                 statusHtml = "0 zones";
 
@@ -796,7 +796,7 @@ function cloneZone(objBtn) {
 
     var zone = $("#txtCloneZoneZoneName").val();
     if ((zone == null) || (zone === "")) {
-        showAlert("warning", "Missing!", "Please enter a domain name for the new zone.", divCloneZoneAlert);
+        showAlert("warning", "警告！", "Please enter a domain name for the new zone.", divCloneZoneAlert);
         $("#txtCloneZoneZoneName").focus();
         return;
     }
@@ -1541,7 +1541,7 @@ function addZone() {
     var zone = $("#txtAddZone").val();
 
     if ((zone == null) || (zone === "")) {
-        showAlert("warning", "Missing!", "Please enter a domain name to add zone.", divAddZoneAlert);
+        showAlert("warning", "警告！", "Please enter a domain name to add zone.", divAddZoneAlert);
         $("#txtAddZone").focus();
         return;
     }
@@ -1572,7 +1572,7 @@ function addZone() {
         case "Forwarder":
             var forwarder = $("#txtAddZoneForwarder").val();
             if ((forwarder == null) || (forwarder === "")) {
-                showAlert("warning", "Missing!", "Please enter a forwarder server name to add zone.", divAddZoneAlert);
+                showAlert("warning", "警告！", "Please enter a forwarder server name to add zone.", divAddZoneAlert);
                 $("#txtAddZoneForwarder").focus();
                 return;
             }
@@ -1595,13 +1595,13 @@ function addZone() {
                         var proxyPassword = $("#txtAddZoneForwarderProxyPassword").val();
 
                         if ((proxyAddress == null) || (proxyAddress === "")) {
-                            showAlert("warning", "Missing!", "Please enter a domain name or IP address for Proxy Server Address to add zone.", divAddZoneAlert);
+                            showAlert("warning", "警告！", "Please enter a domain name or IP address for Proxy Server Address to add zone.", divAddZoneAlert);
                             $("#txtAddZoneForwarderProxyAddress").focus();
                             return;
                         }
 
                         if ((proxyPort == null) || (proxyPort === "")) {
-                            showAlert("warning", "Missing!", "Please enter a port number for Proxy Server Port to add zone.", divAddZoneAlert);
+                            showAlert("warning", "警告！", "Please enter a port number for Proxy Server Port to add zone.", divAddZoneAlert);
                             $("#txtAddZoneForwarderProxyPort").focus();
                             return;
                         }
@@ -1647,7 +1647,7 @@ function showEditZone(zone, showPageNumber) {
     if (zone == null) {
         zone = $("#txtZonesEdit").val();
         if (zone === "") {
-            showAlert("warning", "Missing!", "Please enter a zone name to start editing.");
+            showAlert("warning", "警告！", "Please enter a zone name to start editing.");
             $("#txtZonesEdit").focus();
             return;
         }
@@ -2051,7 +2051,7 @@ function showEditZonePage(pageNumber) {
     var statusHtml;
 
     if (editZoneRecords.length > 0)
-        statusHtml = (start + 1) + "-" + end + " (" + (end - start) + ") of " + editZoneRecords.length + " records (page " + pageNumber + " of " + totalPages + ")";
+        statusHtml = (start + 1) + "-" + end + " (" + (end - start) + ") 共 " + editZoneRecords.length + " 条记录 (当前在 " + pageNumber + " 页 共 " + totalPages + "页)";
     else
         statusHtml = "0 records";
 
@@ -2727,7 +2727,7 @@ function clearAddEditRecordForm() {
     $("#chkAddEditRecordDataPtr").prop("checked", false);
     $("#chkAddEditRecordDataCreatePtrZone").prop('disabled', true);
     $("#chkAddEditRecordDataCreatePtrZone").prop("checked", false);
-    $("#chkAddEditRecordDataPtrLabel").text("Add reverse (PTR) record");
+    $("#chkAddEditRecordDataPtrLabel").text("添加反向（PTR）记录");
 
     $("#divAddEditRecordDataNs").hide();
     $("#txtAddEditRecordDataNsNameServer").prop("disabled", false);
@@ -2927,23 +2927,23 @@ function modifyAddRecordFormByType(addMode) {
 
     switch (type) {
         case "A":
-            $("#lblAddEditRecordDataValue").text("IPv4 Address");
+            $("#lblAddEditRecordDataValue").text("IPv4地址");
             $("#txtAddEditRecordDataValue").val("");
             $("#chkAddEditRecordDataPtr").prop("checked", false);
             $("#chkAddEditRecordDataCreatePtrZone").prop('disabled', true);
             $("#chkAddEditRecordDataCreatePtrZone").prop("checked", false);
-            $("#chkAddEditRecordDataPtrLabel").text("Add reverse (PTR) record");
+            $("#chkAddEditRecordDataPtrLabel").text("添加反向（PTR）记录");
             $("#divAddEditRecordData").show();
             $("#divAddEditRecordDataPtr").show();
             break;
 
         case "AAAA":
-            $("#lblAddEditRecordDataValue").text("IPv6 Address");
+            $("#lblAddEditRecordDataValue").text("IPv6地址");
             $("#txtAddEditRecordDataValue").val("");
             $("#chkAddEditRecordDataPtr").prop("checked", false);
             $("#chkAddEditRecordDataCreatePtrZone").prop('disabled', true);
             $("#chkAddEditRecordDataCreatePtrZone").prop("checked", false);
-            $("#chkAddEditRecordDataPtrLabel").text("Add reverse (PTR) record");
+            $("#chkAddEditRecordDataPtrLabel").text("添加反向（PTR）记录");
             $("#divAddEditRecordData").show();
             $("#divAddEditRecordDataPtr").show();
             break;
@@ -2972,7 +2972,7 @@ function modifyAddRecordFormByType(addMode) {
         case "CNAME":
         case "DNAME":
         case "ANAME":
-            $("#lblAddEditRecordDataValue").text("Domain Name");
+            $("#lblAddEditRecordDataValue").text("域名");
             $("#txtAddEditRecordDataValue").val("");
             $("#divAddEditRecordData").show();
             break;
@@ -2984,13 +2984,13 @@ function modifyAddRecordFormByType(addMode) {
             break;
 
         case "TXT":
-            $("#lblAddEditRecordDataValue").text("Text Data");
+            $("#lblAddEditRecordDataValue").text("值");
             $("#txtAddEditRecordDataValue").val("");
             $("#divAddEditRecordData").show();
             break;
 
         case "SRV":
-            $("#txtAddEditRecordName").prop("placeholder", "_service._protocol.name");
+            $("#txtAddEditRecordName").prop("placeholder", "_服务._协议.名称");
             $("#txtAddEditRecordDataSrvPriority").val("");
             $("#txtAddEditRecordDataSrvWeight").val("");
             $("#txtAddEditRecordDataSrvPort").val("");
@@ -3122,7 +3122,7 @@ function addRecord() {
         case "AAAA":
             var ipAddress = $("#txtAddEditRecordDataValue").val();
             if (ipAddress === "") {
-                showAlert("warning", "Missing!", "Please enter an IP address to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "请输入要添加记录的 IP 地址", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -3133,7 +3133,7 @@ function addRecord() {
         case "NS":
             var nameServer = $("#txtAddEditRecordDataNsNameServer").val();
             if (nameServer === "") {
-                showAlert("warning", "Missing!", "Please enter a name server to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "请输入要添加记录的DNS地址", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataNsNameServer").focus();
                 return;
             }
@@ -3146,14 +3146,14 @@ function addRecord() {
         case "CNAME":
             var subDomainName = $("#txtAddEditRecordName").val();
             if ((subDomainName === "") || (subDomainName === "@")) {
-                showAlert("warning", "Missing!", "Please enter a name for the CNAME record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "不能为根添加 CNAME 记录", divAddEditRecordAlert);
                 $("#txtAddEditRecordName").focus();
                 return;
             }
 
             var cname = $("#txtAddEditRecordDataValue").val();
             if (cname === "") {
-                showAlert("warning", "Missing!", "Please enter a domain name to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "请输入要添加记录的域名", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -3164,7 +3164,7 @@ function addRecord() {
         case "PTR":
             var ptrName = $("#txtAddEditRecordDataValue").val();
             if (ptrName === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -3179,7 +3179,7 @@ function addRecord() {
 
             var exchange = $("#txtAddEditRecordDataMxExchange").val();
             if (exchange === "") {
-                showAlert("warning", "Missing!", "Please enter a mail exchange domain name to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a mail exchange domain name to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataMxExchange").focus();
                 return;
             }
@@ -3190,7 +3190,7 @@ function addRecord() {
         case "TXT":
             var text = $("#txtAddEditRecordDataValue").val();
             if (text === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -3200,35 +3200,35 @@ function addRecord() {
 
         case "SRV":
             if ($("#txtAddEditRecordName").val() === "") {
-                showAlert("warning", "Missing!", "Please enter a name that includes service and protocol labels.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a name that includes service and protocol labels.", divAddEditRecordAlert);
                 $("#txtAddEditRecordName").focus();
                 return;
             }
 
             var priority = $("#txtAddEditRecordDataSrvPriority").val();
             if (priority === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable priority.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable priority.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSrvPriority").focus();
                 return;
             }
 
             var weight = $("#txtAddEditRecordDataSrvWeight").val();
             if (weight === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable weight.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable weight.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSrvWeight").focus();
                 return;
             }
 
             var port = $("#txtAddEditRecordDataSrvPort").val();
             if (port === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable port number.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable port number.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSrvPort").focus();
                 return;
             }
 
             var target = $("#txtAddEditRecordDataSrvTarget").val();
             if (target === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value into the target field.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value into the target field.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSrvTarget").focus();
                 return;
             }
@@ -3239,7 +3239,7 @@ function addRecord() {
         case "DNAME":
             var dname = $("#txtAddEditRecordDataValue").val();
             if (dname === "") {
-                showAlert("warning", "Missing!", "Please enter a domain name to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a domain name to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -3250,35 +3250,35 @@ function addRecord() {
         case "DS":
             var subDomainName = $("#txtAddEditRecordName").val();
             if ((subDomainName === "") || (subDomainName === "@")) {
-                showAlert("warning", "Missing!", "Please enter a name for the DS record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a name for the DS record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordName").focus();
                 return;
             }
 
             var keyTag = $("#txtAddEditRecordDataDsKeyTag").val();
             if (keyTag === "") {
-                showAlert("warning", "Missing!", "Please enter the Key Tag value to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter the Key Tag value to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataDsKeyTag").focus();
                 return;
             }
 
             var algorithm = $("#optAddEditRecordDataDsAlgorithm").val();
             if ((algorithm === null) || (algorithm === "")) {
-                showAlert("warning", "Missing!", "Please select an DNSSEC algorithm to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select an DNSSEC algorithm to add the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataDsAlgorithm").focus();
                 return;
             }
 
             var digestType = $("#optAddEditRecordDataDsDigestType").val();
             if ((digestType === null) || (digestType === "")) {
-                showAlert("warning", "Missing!", "Please select a Digest Type to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Digest Type to add the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataDsDigestType").focus();
                 return;
             }
 
             var digest = $("#txtAddEditRecordDataDsDigest").val();
             if (digest === "") {
-                showAlert("warning", "Missing!", "Please enter the Digest hash in hex string format to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter the Digest hash in hex string format to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataDsDigest").focus();
                 return;
             }
@@ -3289,21 +3289,21 @@ function addRecord() {
         case "SSHFP":
             var sshfpAlgorithm = $("#optAddEditRecordDataSshfpAlgorithm").val();
             if ((sshfpAlgorithm === null) || (sshfpAlgorithm === "")) {
-                showAlert("warning", "Missing!", "Please select an Algorithm to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select an Algorithm to add the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataSshfpAlgorithm").focus();
                 return;
             }
 
             var sshfpFingerprintType = $("#optAddEditRecordDataSshfpFingerprintType").val();
             if ((sshfpFingerprintType === null) || (sshfpFingerprintType === "")) {
-                showAlert("warning", "Missing!", "Please select a Fingerprint Type to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Fingerprint Type to add the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataSshfpFingerprintType").focus();
                 return;
             }
 
             var sshfpFingerprint = $("#txtAddEditRecordDataSshfpFingerprint").val();
             if (sshfpFingerprint === "") {
-                showAlert("warning", "Missing!", "Please enter the Fingerprint hash in hex string format to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter the Fingerprint hash in hex string format to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSshfpFingerprint").focus();
                 return;
             }
@@ -3314,34 +3314,34 @@ function addRecord() {
         case "TLSA":
             var tlsaCertificateUsage = $("#optAddEditRecordDataTlsaCertificateUsage").val();
             if ((tlsaCertificateUsage === null) || (tlsaCertificateUsage === "")) {
-                showAlert("warning", "Missing!", "Please select a Certificate Usage to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Certificate Usage to add the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataTlsaCertificateUsage").focus();
                 return;
             }
 
             var tlsaSelector = $("#optAddEditRecordDataTlsaSelector").val();
             if ((tlsaSelector === null) || (tlsaSelector === "")) {
-                showAlert("warning", "Missing!", "Please select a Selector to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Selector to add the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataTlsaSelector").focus();
                 return;
             }
 
             var tlsaMatchingType = $("#optAddEditRecordDataTlsaMatchingType").val();
             if ((tlsaMatchingType === null) || (tlsaMatchingType === "")) {
-                showAlert("warning", "Missing!", "Please select a Matching Type to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Matching Type to add the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataTlsaMatchingType").focus();
                 return;
             }
 
             var tlsaCertificateAssociationData = $("#txtAddEditRecordDataTlsaCertificateAssociationData").val();
             if (tlsaCertificateAssociationData === "") {
-                showAlert("warning", "Missing!", "Please enter the Certificate Association Data to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter the Certificate Association Data to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataTlsaCertificateAssociationData").focus();
                 return;
             }
 
             if ((tlsaMatchingType === "Full") && !tlsaCertificateAssociationData.startsWith("-")) {
-                showAlert("warning", "Missing!", "Please enter a complete certificate in PEM format as the Certificate Association Data to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a complete certificate in PEM format as the Certificate Association Data to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataTlsaCertificateAssociationData").focus();
                 return;
             }
@@ -3353,14 +3353,14 @@ function addRecord() {
         case "HTTPS":
             var svcPriority = $("#txtAddEditRecordDataSvcbPriority").val();
             if ((svcPriority === null) || (svcPriority === "")) {
-                showAlert("warning", "Missing!", "Please enter a Priority value to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a Priority value to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSvcbPriority").focus();
                 return;
             }
 
             var svcTargetName = $("#txtAddEditRecordDataSvcbTargetName").val();
             if ((svcTargetName === null) || (svcTargetName === "")) {
-                showAlert("warning", "Missing!", "Please enter a Target Name to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a Target Name to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSvcbTargetName").focus();
                 return;
             }
@@ -3378,21 +3378,21 @@ function addRecord() {
         case "URI":
             var uriPriority = $("#txtAddEditRecordDataUriPriority").val();
             if (uriPriority === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable priority.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable priority.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataUriPriority").focus();
                 return;
             }
 
             var uriWeight = $("#txtAddEditRecordDataUriWeight").val();
             if (uriWeight === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable weight.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable weight.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataUriWeight").focus();
                 return;
             }
 
             var uri = $("#txtAddEditRecordDataUri").val();
             if (uri === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value into the URI field.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value into the URI field.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataUri").focus();
                 return;
             }
@@ -3411,7 +3411,7 @@ function addRecord() {
 
             var value = $("#txtAddEditRecordDataCaaValue").val();
             if (value === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value into the authority field.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value into the authority field.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataCaaValue").focus();
                 return;
             }
@@ -3422,7 +3422,7 @@ function addRecord() {
         case "ANAME":
             var aname = $("#txtAddEditRecordDataValue").val();
             if (aname === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -3433,7 +3433,7 @@ function addRecord() {
         case "FWD":
             var forwarder = $("#txtAddEditRecordDataForwarder").val();
             if (forwarder === "") {
-                showAlert("warning", "Missing!", "Please enter a domain name or IP address or URL as a forwarder to add the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a domain name or IP address or URL as a forwarder to add the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataForwarder").focus();
                 return;
             }
@@ -3453,13 +3453,13 @@ function addRecord() {
                     var proxyPassword = $("#txtAddEditRecordDataForwarderProxyPassword").val();
 
                     if ((proxyAddress == null) || (proxyAddress === "")) {
-                        showAlert("warning", "Missing!", "Please enter a domain name or IP address for Proxy Server Address to add the record.", divAddEditRecordAlert);
+                        showAlert("warning", "警告！", "Please enter a domain name or IP address for Proxy Server Address to add the record.", divAddEditRecordAlert);
                         $("#txtAddEditRecordDataForwarderProxyAddress").focus();
                         return;
                     }
 
                     if ((proxyPort == null) || (proxyPort === "")) {
-                        showAlert("warning", "Missing!", "Please enter a port number for Proxy Server Port to add the record.", divAddEditRecordAlert);
+                        showAlert("warning", "警告！", "Please enter a port number for Proxy Server Port to add the record.", divAddEditRecordAlert);
                         $("#txtAddEditRecordDataForwarderProxyPort").focus();
                         return;
                     }
@@ -3473,7 +3473,7 @@ function addRecord() {
             var appName = $("#optAddEditRecordDataAppName").val();
 
             if ((appName === null) || (appName === "")) {
-                showAlert("warning", "Missing!", "Please select an application name to add record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select an application name to add record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataAppName").focus();
                 return;
             }
@@ -3481,7 +3481,7 @@ function addRecord() {
             var classPath = $("#optAddEditRecordDataClassPath").val();
 
             if ((classPath === null) || (classPath === "")) {
-                showAlert("warning", "Missing!", "Please select a class path to add record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a class path to add record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataClassPath").focus();
                 return;
             }
@@ -3494,14 +3494,14 @@ function addRecord() {
         default:
             type = $("#txtAddEditRecordDataUnknownType").val();
             if ((type === null) || (type === "")) {
-                showAlert("warning", "Missing!", "Please enter a resoure record name or number to add record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a resoure record name or number to add record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataUnknownType").focus();
                 return;
             }
 
             var rdata = $("#txtAddEditRecordDataValue").val();
             if ((rdata === null) || (rdata === "")) {
-                showAlert("warning", "Missing!", "Please enter a hex value as the RDATA to add record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a hex value as the RDATA to add record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -3965,7 +3965,7 @@ function updateRecord() {
 
             var newIpAddress = $("#txtAddEditRecordDataValue").val();
             if (newIpAddress === "") {
-                showAlert("warning", "Missing!", "Please enter an IP address to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter an IP address to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -3978,7 +3978,7 @@ function updateRecord() {
 
             var newNameServer = $("#txtAddEditRecordDataNsNameServer").val();
             if (newNameServer === "") {
-                showAlert("warning", "Missing!", "Please enter a name server to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a name server to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataNsNameServer").focus();
                 return;
             }
@@ -3991,14 +3991,14 @@ function updateRecord() {
         case "CNAME":
             var subDomainName = $("#txtAddEditRecordName").val();
             if ((subDomainName === "") || (subDomainName === "@")) {
-                showAlert("warning", "Missing!", "Please enter a name for the CNAME record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a name for the CNAME record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordName").focus();
                 return;
             }
 
             var cname = $("#txtAddEditRecordDataValue").val();
             if (cname === "") {
-                showAlert("warning", "Missing!", "Please enter a domain name to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a domain name to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -4009,49 +4009,49 @@ function updateRecord() {
         case "SOA":
             var primaryNameServer = $("#txtEditRecordDataSoaPrimaryNameServer").val();
             if (primaryNameServer === "") {
-                showAlert("warning", "Missing!", "Please enter a value for primary name server.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a value for primary name server.", divAddEditRecordAlert);
                 $("#txtEditRecordDataSoaPrimaryNameServer").focus();
                 return;
             }
 
             var responsiblePerson = $("#txtEditRecordDataSoaResponsiblePerson").val();
             if (responsiblePerson === "") {
-                showAlert("warning", "Missing!", "Please enter a value for responsible person.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a value for responsible person.", divAddEditRecordAlert);
                 $("#txtEditRecordDataSoaResponsiblePerson").focus();
                 return;
             }
 
             var serial = $("#txtEditRecordDataSoaSerial").val();
             if (serial === "") {
-                showAlert("warning", "Missing!", "Please enter a value for serial.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a value for serial.", divAddEditRecordAlert);
                 $("#txtEditRecordDataSoaSerial").focus();
                 return;
             }
 
             var refresh = $("#txtEditRecordDataSoaRefresh").val();
             if (refresh === "") {
-                showAlert("warning", "Missing!", "Please enter a value for refresh.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a value for refresh.", divAddEditRecordAlert);
                 $("#txtEditRecordDataSoaRefresh").focus();
                 return;
             }
 
             var retry = $("#txtEditRecordDataSoaRetry").val();
             if (retry === "") {
-                showAlert("warning", "Missing!", "Please enter a value for retry.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a value for retry.", divAddEditRecordAlert);
                 $("#txtEditRecordDataSoaRetry").focus();
                 return;
             }
 
             var expire = $("#txtEditRecordDataSoaExpire").val();
             if (expire === "") {
-                showAlert("warning", "Missing!", "Please enter a value for expire.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a value for expire.", divAddEditRecordAlert);
                 $("#txtEditRecordDataSoaExpire").focus();
                 return;
             }
 
             var minimum = $("#txtEditRecordDataSoaMinimum").val();
             if (minimum === "") {
-                showAlert("warning", "Missing!", "Please enter a value for minimum.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a value for minimum.", divAddEditRecordAlert);
                 $("#txtEditRecordDataSoaMinimum").focus();
                 return;
             }
@@ -4080,7 +4080,7 @@ function updateRecord() {
 
             var newPtrName = $("#txtAddEditRecordDataValue").val();
             if (newPtrName === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -4099,7 +4099,7 @@ function updateRecord() {
 
             var newExchange = $("#txtAddEditRecordDataMxExchange").val();
             if (newExchange === "") {
-                showAlert("warning", "Missing!", "Please enter a mail exchange domain name to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a mail exchange domain name to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataMxExchange").focus();
                 return;
             }
@@ -4112,7 +4112,7 @@ function updateRecord() {
 
             var newText = $("#txtAddEditRecordDataValue").val();
             if (newText === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -4122,7 +4122,7 @@ function updateRecord() {
 
         case "SRV":
             if ($("#txtAddEditRecordName").val() === "") {
-                showAlert("warning", "Missing!", "Please enter a name that includes service and protocol labels.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a name that includes service and protocol labels.", divAddEditRecordAlert);
                 $("#txtAddEditRecordName").focus();
                 return;
             }
@@ -4131,7 +4131,7 @@ function updateRecord() {
 
             var newPriority = $("#txtAddEditRecordDataSrvPriority").val();
             if (newPriority === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable priority.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable priority.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSrvPriority").focus();
                 return;
             }
@@ -4140,7 +4140,7 @@ function updateRecord() {
 
             var newWeight = $("#txtAddEditRecordDataSrvWeight").val();
             if (newWeight === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable weight.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable weight.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSrvWeight").focus();
                 return;
             }
@@ -4149,7 +4149,7 @@ function updateRecord() {
 
             var newPort = $("#txtAddEditRecordDataSrvPort").val();
             if (newPort === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable port number.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable port number.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSrvPort").focus();
                 return;
             }
@@ -4158,7 +4158,7 @@ function updateRecord() {
 
             var newTarget = $("#txtAddEditRecordDataSrvTarget").val();
             if (newTarget === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value into the target field.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value into the target field.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSrvTarget").focus();
                 return;
             }
@@ -4169,7 +4169,7 @@ function updateRecord() {
         case "DNAME":
             var dname = $("#txtAddEditRecordDataValue").val();
             if (dname === "") {
-                showAlert("warning", "Missing!", "Please enter a domain name to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a domain name to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -4180,7 +4180,7 @@ function updateRecord() {
         case "DS":
             var subDomainName = $("#txtAddEditRecordName").val();
             if ((subDomainName === "") || (subDomainName === "@")) {
-                showAlert("warning", "Missing!", "Please enter a name for the DS record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a name for the DS record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordName").focus();
                 return;
             }
@@ -4191,21 +4191,21 @@ function updateRecord() {
 
             var newKeyTag = $("#txtAddEditRecordDataDsKeyTag").val();
             if (newKeyTag === "") {
-                showAlert("warning", "Missing!", "Please enter the Key Tag value to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter the Key Tag value to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataDsKeyTag").focus();
                 return;
             }
 
             var newAlgorithm = $("#optAddEditRecordDataDsAlgorithm").val();
             if ((newAlgorithm === null) || (newAlgorithm === "")) {
-                showAlert("warning", "Missing!", "Please select an DNSSEC algorithm to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select an DNSSEC algorithm to update the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataDsAlgorithm").focus();
                 return;
             }
 
             var newDigestType = $("#optAddEditRecordDataDsDigestType").val();
             if ((newDigestType === null) || (newDigestType === "")) {
-                showAlert("warning", "Missing!", "Please select a Digest Type to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Digest Type to update the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataDsDigestType").focus();
                 return;
             }
@@ -4214,7 +4214,7 @@ function updateRecord() {
 
             var newDigest = $("#txtAddEditRecordDataDsDigest").val();
             if (newDigest === "") {
-                showAlert("warning", "Missing!", "Please enter the Digest hash in hex string format to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter the Digest hash in hex string format to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataDsDigest").focus();
                 return;
             }
@@ -4229,21 +4229,21 @@ function updateRecord() {
 
             var newSshfpAlgorithm = $("#optAddEditRecordDataSshfpAlgorithm").val();
             if ((newSshfpAlgorithm === null) || (newSshfpAlgorithm === "")) {
-                showAlert("warning", "Missing!", "Please select an Algorithm to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select an Algorithm to update the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataSshfpAlgorithm").focus();
                 return;
             }
 
             var newSshfpFingerprintType = $("#optAddEditRecordDataSshfpFingerprintType").val();
             if ((newSshfpFingerprintType === null) || (newSshfpFingerprintType === "")) {
-                showAlert("warning", "Missing!", "Please select a Fingerprint Type to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Fingerprint Type to update the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataSshfpFingerprintType").focus();
                 return;
             }
 
             var newSshfpFingerprint = $("#txtAddEditRecordDataSshfpFingerprint").val();
             if (newSshfpFingerprint === "") {
-                showAlert("warning", "Missing!", "Please enter the Fingerprint hash in hex string format to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter the Fingerprint hash in hex string format to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSshfpFingerprint").focus();
                 return;
             }
@@ -4259,28 +4259,28 @@ function updateRecord() {
 
             var newTlsaCertificateUsage = $("#optAddEditRecordDataTlsaCertificateUsage").val();
             if ((newTlsaCertificateUsage === null) || (newTlsaCertificateUsage === "")) {
-                showAlert("warning", "Missing!", "Please select a Certificate Usage to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Certificate Usage to update the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataTlsaCertificateUsage").focus();
                 return;
             }
 
             var newTlsaSelector = $("#optAddEditRecordDataTlsaSelector").val();
             if ((newTlsaSelector === null) || (newTlsaSelector === "")) {
-                showAlert("warning", "Missing!", "Please select a Selector to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Selector to update the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataTlsaSelector").focus();
                 return;
             }
 
             var newTlsaMatchingType = $("#optAddEditRecordDataTlsaMatchingType").val();
             if ((newTlsaMatchingType === null) || (newTlsaMatchingType === "")) {
-                showAlert("warning", "Missing!", "Please select a Matching Type to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please select a Matching Type to update the record.", divAddEditRecordAlert);
                 $("#optAddEditRecordDataTlsaMatchingType").focus();
                 return;
             }
 
             var newTlsaCertificateAssociationData = $("#txtAddEditRecordDataTlsaCertificateAssociationData").val();
             if (newTlsaCertificateAssociationData === "") {
-                showAlert("warning", "Missing!", "Please enter the Certificate Association Data to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter the Certificate Association Data to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataTlsaCertificateAssociationData").focus();
                 return;
             }
@@ -4309,14 +4309,14 @@ function updateRecord() {
 
             var newSvcPriority = $("#txtAddEditRecordDataSvcbPriority").val();
             if ((newSvcPriority === null) || (newSvcPriority === "")) {
-                showAlert("warning", "Missing!", "Please enter a Priority value to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a Priority value to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSvcbPriority").focus();
                 return;
             }
 
             var newSvcTargetName = $("#txtAddEditRecordDataSvcbTargetName").val();
             if ((newSvcTargetName === null) || (newSvcTargetName === "")) {
-                showAlert("warning", "Missing!", "Please enter a Target Name to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a Target Name to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataSvcbTargetName").focus();
                 return;
             }
@@ -4336,7 +4336,7 @@ function updateRecord() {
 
             var newUriPriority = $("#txtAddEditRecordDataUriPriority").val();
             if (newUriPriority === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable priority.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable priority.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataUriPriority").focus();
                 return;
             }
@@ -4345,7 +4345,7 @@ function updateRecord() {
 
             var newUriWeight = $("#txtAddEditRecordDataUriWeight").val();
             if (newUriWeight === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable weight.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable weight.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataUriWeight").focus();
                 return;
             }
@@ -4354,7 +4354,7 @@ function updateRecord() {
 
             var newUri = $("#txtAddEditRecordDataUri").val();
             if (newUri === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value into the URI field.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value into the URI field.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataUri").focus();
                 return;
             }
@@ -4378,7 +4378,7 @@ function updateRecord() {
 
             var newValue = $("#txtAddEditRecordDataCaaValue").val();
             if (newValue === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value into the authority field.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value into the authority field.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataCaaValue").focus();
                 return;
             }
@@ -4391,7 +4391,7 @@ function updateRecord() {
 
             var newAName = $("#txtAddEditRecordDataValue").val();
             if (newAName === "") {
-                showAlert("warning", "Missing!", "Please enter a suitable value to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a suitable value to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -4407,7 +4407,7 @@ function updateRecord() {
 
             var newForwarder = $("#txtAddEditRecordDataForwarder").val();
             if (newForwarder === "") {
-                showAlert("warning", "Missing!", "Please enter a domain name or IP address or URL as a forwarder to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a domain name or IP address or URL as a forwarder to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataForwarder").focus();
                 return;
             }
@@ -4430,13 +4430,13 @@ function updateRecord() {
                         var proxyPassword = $("#txtAddEditRecordDataForwarderProxyPassword").val();
 
                         if ((proxyAddress == null) || (proxyAddress === "")) {
-                            showAlert("warning", "Missing!", "Please enter a domain name or IP address for Proxy Server Address to update the record.", divAddEditRecordAlert);
+                            showAlert("warning", "警告！", "Please enter a domain name or IP address for Proxy Server Address to update the record.", divAddEditRecordAlert);
                             $("#txtAddEditRecordDataForwarderProxyAddress").focus();
                             return;
                         }
 
                         if ((proxyPort == null) || (proxyPort === "")) {
-                            showAlert("warning", "Missing!", "Please enter a port number for Proxy Server Port to update the record.", divAddEditRecordAlert);
+                            showAlert("warning", "警告！", "Please enter a port number for Proxy Server Port to update the record.", divAddEditRecordAlert);
                             $("#txtAddEditRecordDataForwarderProxyPort").focus();
                             return;
                         }
@@ -4457,7 +4457,7 @@ function updateRecord() {
 
             var newRData = $("#txtAddEditRecordDataValue").val();
             if ((newRData === null) || (newRData === "")) {
-                showAlert("warning", "Missing!", "Please enter a hex value as the RDATA to update the record.", divAddEditRecordAlert);
+                showAlert("warning", "警告！", "Please enter a hex value as the RDATA to update the record.", divAddEditRecordAlert);
                 $("#txtAddEditRecordDataValue").focus();
                 return;
             }
@@ -4964,13 +4964,28 @@ function showViewDsModal(zoneName) {
 
             for (var i = 0; i < responseJSON.response.dsRecords.length; i++) {
                 var rowspan = responseJSON.response.dsRecords[i].digests.length + 1;
-
+                let state_chinese;
+                switch (responseJSON.response.dsRecords[i].dnsKeyState) {
+                    case "Generated":
+                        state_chinese = "已生成";
+                        break
+                    case "Published":
+                        state_chinese = "已发布";
+                        break
+                    case "Ready":
+                        state_chinese = "已就绪";
+                        break
+                    case "Active":
+                        state_chinese = "已激活";
+                        break
+                }
+                
                 tableHtmlRows += "<tr>"
                     + "<td rowspan=" + rowspan + ">" + responseJSON.response.dsRecords[i].keyTag + "</td>"
-                    + "<td rowspan=" + rowspan + ">" + responseJSON.response.dsRecords[i].dnsKeyState;
+                    + "<td rowspan=" + rowspan + ">" + state_chinese;
 
                 if (responseJSON.response.dsRecords[i].dnsKeyStateReadyBy != null)
-                    tableHtmlRows += "</br>(ready by: " + moment(responseJSON.response.dsRecords[i].dnsKeyStateReadyBy).local().format("YYYY-MM-DD HH:mm") + ")";
+                    tableHtmlRows += "</br>(将于: " + moment(responseJSON.response.dsRecords[i].dnsKeyStateReadyBy).local().format("YYYY-MM-DD HH:mm") + "就绪)";
 
                 tableHtmlRows += "</td><td rowspan=" + rowspan + ">" + responseJSON.response.dsRecords[i].algorithm + "</td>";
 
@@ -5040,12 +5055,26 @@ function refreshDnssecProperties(divDnssecPropertiesLoader) {
 
             for (var i = 0; i < responseJSON.response.dnssecPrivateKeys.length; i++) {
                 var id = Math.floor(Math.random() * 10000);
-
+                let state_chinese;
+                switch (responseJSON.response.dnssecPrivateKeys[i].state) {
+                    case "Generated":
+                        state_chinese = "已生成";
+                        break
+                    case "Published":
+                        state_chinese = "已发布";
+                        break
+                    case "Ready":
+                        state_chinese = "已就绪";
+                        break
+                    case "Active":
+                        state_chinese = "已激活";
+                        break
+                }
                 tableHtmlRows += "<tr id=\"trDnssecPropertiesPrivateKey" + id + "\">"
                     + "<td>" + responseJSON.response.dnssecPrivateKeys[i].keyTag + "</td>"
                     + "<td>" + responseJSON.response.dnssecPrivateKeys[i].keyType + "</td>"
                     + "<td>" + responseJSON.response.dnssecPrivateKeys[i].algorithm + "</td>"
-                    + "<td>" + responseJSON.response.dnssecPrivateKeys[i].state + "</td>"
+                    + "<td>" + state_chinese + "</td>"
                     + "<td>" + moment(responseJSON.response.dnssecPrivateKeys[i].stateChangedOn).local().format("YYYY-MM-DD HH:mm");
 
                 if (responseJSON.response.dnssecPrivateKeys[i].stateReadyBy != null)
@@ -5064,7 +5093,7 @@ function refreshDnssecProperties(divDnssecPropertiesLoader) {
                             }
                             else {
                                 tableHtmlRows += "<input id=\"txtDnssecPropertiesPrivateKeyAutomaticRollover" + id + "\" type=\"text\" placeholder=\"days\" style=\"width: 40px;\" value=\"" + responseJSON.response.dnssecPrivateKeys[i].rolloverDays + "\" />" +
-                                    "<button type=\"button\" class=\"btn btn-default\" style=\"padding: 2px 6px; margin-top: -2px; margin-left: 4px; font-size: 12px; height: 26px; width: 46px;\" data-id=\"" + id + "\" data-loading-text=\"Save\" onclick=\"updateDnssecPrivateKey(" + responseJSON.response.dnssecPrivateKeys[i].keyTag + ", this);\">Save</button>";
+                                    "<button type=\"button\" class=\"btn btn-default\" style=\"padding: 2px 6px; margin-top: -2px; margin-left: 4px; font-size: 12px; height: 26px; width: 46px;\" data-id=\"" + id + "\" data-loading-text=\"Save\" onclick=\"updateDnssecPrivateKey(" + responseJSON.response.dnssecPrivateKeys[i].keyTag + ", this);\">保存</button>";
                             }
                             break;
 
