@@ -10,7 +10,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{1052DB5E-35BD-4F67-89CD-1F45A1688E77}
+AppId={{E11C95D2-E89B-4D62-962E-44C9CE80875F}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -34,9 +34,9 @@ WizardStyle=modern
 UninstallDisplayIcon={app}\{#MyAppExeName}
 
 [Languages]
+Name: "Chinese_Simplified"; MessagesFile: "compiler:Languages/ChineseSimplified.isl"
+Name: "Chinese_Traditional"; MessagesFile: "compiler:Languages/ChineseTraditional.isl"
 Name: "english"; MessagesFile: "compiler:Default.isl"
-Name: "简体中文"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
-Name: "繁體中文"; MessagesFile: "compiler:Languages\ChineseTraditional.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}";
@@ -51,7 +51,7 @@ Name: "{group}\DNS Server App"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\Dashboard"; Filename: "http://localhost:5380/"
 Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "{autodesktop}\DNS Server App"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{autodesktop}\DNS Server App简体中文版"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Parameters: "--first-run"; Description: "{cm:LaunchProgram,{#StringChange("DNS Server App", '&', '&&')}}"; Flags: nowait postinstall skipifsilent runascurrentuser
